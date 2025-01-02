@@ -20,4 +20,14 @@ body {
     flex-direction: column;
     height: 100%;
   }
+  .guarantee-swiper-pagination-bullet {
+    background-color: #ffffff;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .guarantee-swiper-pagination-bullet-active {
+    background-color: #1f94d2;
+  }
 }
