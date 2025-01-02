@@ -13,6 +13,7 @@ export default {
         foreground: "var(--foreground)",
       },
       lineHeight: {
+        "120%": "120%",
         "130%": "130%",
       },
     },

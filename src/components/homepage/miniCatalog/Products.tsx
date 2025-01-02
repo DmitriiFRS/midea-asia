@@ -8,24 +8,33 @@ interface Props {
 const Products: React.FC<Props> = ({ locale }) => {
   return (
     <div className="grid grid-cols-4 gap-2">
-      <MiniCatalogCard locale={locale} img={temp} params={["Для небольших помещений"]} title="Бытовые кондиционеры" />
       <MiniCatalogCard
         locale={locale}
         img={temp}
-        params={["Для кафе, ресторанов, торговых центров"]}
-        title="Промышленные кондиционеры"
+        params={["Для небольших помещений"]}
+        title="Бытовые кондиционеры"
+        blockClassName="aspect-square"
       />
       <MiniCatalogCard
         locale={locale}
         img={temp}
         params={["Для кафе, ресторанов, торговых центров"]}
         title="Промышленные кондиционеры"
+        blockClassName="aspect-square"
       />
       <MiniCatalogCard
         locale={locale}
         img={temp}
         params={["Для кафе, ресторанов, торговых центров"]}
         title="Промышленные кондиционеры"
+        blockClassName="aspect-square"
+      />
+      <MiniCatalogCard
+        locale={locale}
+        img={temp}
+        params={["Для кафе, ресторанов, торговых центров"]}
+        title="Промышленные кондиционеры"
+        blockClassName="aspect-square"
       />
     </div>
   );

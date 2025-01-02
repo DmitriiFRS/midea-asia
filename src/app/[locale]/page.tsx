@@ -1,3 +1,6 @@
+import BrandDescription from "@/components/homepage/brandDescription/BrandDescription";
+import GreatSolution from "@/components/homepage/greatSolution/GreatSolution";
+import Guarantee from "@/components/homepage/guarantee/Guarantee";
 import Hero from "@/components/homepage/hero/Hero";
 import MiniCatalog from "@/components/homepage/miniCatalog/MiniCatalog";
 import SubheroTitle from "@/components/homepage/subheroTitle/SubheroTitle";
@@ -16,6 +19,9 @@ export default async function Home({ params }: Props) {
       <Hero locale={locale} />
       <SubheroTitle locale={locale} />
       <MiniCatalog locale={locale} />
+      <GreatSolution locale={locale} />
+      <BrandDescription locale={locale} />
+      <Guarantee locale={locale} />
     </main>
   );
 }
