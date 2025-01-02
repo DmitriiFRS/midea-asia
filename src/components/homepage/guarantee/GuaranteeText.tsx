@@ -3,7 +3,7 @@ interface Props {
 }
 
 const GuaranteeText: React.FC<Props> = ({ locale }) => {
-  return <div></div>;
+  return <div className="flex-[0_1_40%]">fd</div>;
 };
 
 export default GuaranteeText;
