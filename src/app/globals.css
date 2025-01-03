@@ -30,4 +30,7 @@ body {
   .guarantee-swiper-pagination-bullet-active {
     background-color: #1f94d2;
   }
+  .phone-input-wrapper .react-tel-input {
+    margin: 0 !important;
+  }
 }

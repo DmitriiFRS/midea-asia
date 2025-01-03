@@ -11,6 +11,7 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        blue: "#1F94D2",
       },
       lineHeight: {
         "120%": "120%",
