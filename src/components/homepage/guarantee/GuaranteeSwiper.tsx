@@ -1,10 +1,13 @@
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import swiperImg from "@img/home/swiperimg.jpeg";
+import slide1 from "@img/home/card1.webp";
+import slide2 from "@img/home/card2.webp";
+import slide3 from "@img/home/card3.webp";
 import Image from "next/image";
 import "swiper/css";
-import { EffectFade, Pagination } from "swiper/modules";
+import "swiper/css/effect-fade";
+import { Autoplay, EffectFade, Pagination } from "swiper/modules";
 
 interface Props {
   locale: string;
@@ -14,15 +17,15 @@ const GuaranteeSwiper: React.FC<Props> = ({ locale }) => {
   const slides = [
     {
       id: 9,
-      img: swiperImg,
+      img: slide1,
     },
     {
       id: 10,
-      img: swiperImg,
+      img: slide2,
     },
     {
       id: 11,
-      img: swiperImg,
+      img: slide3,
     },
   ];
   return (
@@ -31,7 +34,8 @@ const GuaranteeSwiper: React.FC<Props> = ({ locale }) => {
         className="w-full h-full"
         slidesPerView={1}
         loop={true}
-        modules={[Pagination, EffectFade]}
+        autoplay={{ delay: 5000, disableOnInteraction: true }}
+        modules={[Pagination, EffectFade, Autoplay]}
         pagination={{
           clickable: true,
           el: ".guarantee-swiper-pagination",

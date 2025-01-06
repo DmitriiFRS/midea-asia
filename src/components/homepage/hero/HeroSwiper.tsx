@@ -2,19 +2,24 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import "swiper/css/effect-fade";
+import "swiper/css/autoplay";
 import img from "@img/home/temp.jpeg";
+import slide1 from "@img/home/card1.webp";
+import slide2 from "@img/home/card2.webp";
+import slide3 from "@img/home/card3.webp";
 import Image from "next/image";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, EffectFade } from "swiper/modules";
 
 interface Props {
   locale: string;
 }
 
 const HeroSwiper: React.FC<Props> = ({ locale }) => {
-  const slides = [img, img, img];
+  const slides = [slide1, slide2, slide3];
   return (
     <div className="absolute top-0 left-0 w-full h-screen    -z-20">
-      <Swiper modules={[Autoplay]} autoplay={{ delay: 5000 }} loop={true} speed={1000}>
+      <Swiper modules={[Autoplay, EffectFade]} autoplay={{ delay: 3000 }} loop={true} speed={2000} effect="fade">
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
             <div className="w-full h-full">
