@@ -3,34 +3,43 @@
 @tailwind utilities;
 
 main {
-  @apply flex-[1_1_auto];
+     @apply flex-[1_1_auto];
 }
 html,
 body {
-  @apply h-full w-full;
+     @apply h-full w-full;
 }
 @layer base {
-  body {
-    line-height: 1;
-    padding: 0px;
-    margin: 0px;
-  }
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-  .guarantee-swiper-pagination-bullet {
-    background-color: #ffffff;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    cursor: pointer;
-  }
-  .guarantee-swiper-pagination-bullet-active {
-    background-color: #1f94d2;
-  }
-  .phone-input-wrapper .react-tel-input {
-    margin: 0 !important;
-  }
+     body {
+          line-height: 1;
+          padding: 0px;
+          margin: 0px;
+          background: #f4f4f4;
+     }
+     .wrapper {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+     }
+     .guarantee-swiper-pagination-bullet {
+          background-color: #ffffff;
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          cursor: pointer;
+     }
+     .guarantee-swiper-pagination-bullet-active {
+          background-color: #1f94d2;
+     }
+     .phone-input-wrapper .react-tel-input {
+          margin: 0 !important;
+     }
+     .section-margin {
+          margin-top: 180px;
+     }
+     @media (max-width: 768px) {
+          .section-margin {
+               margin-top: 80px;
+          }
+     }
 }
