@@ -63,7 +63,7 @@ const Form: React.FC<Props> = ({ locale, success, setSuccess, additionalFields, 
      return (
           <>
                {success ? (
-                    <div className="lg:text-[24px] font-medium tracking-tightest text-neutral-gray">Мы свяжемся с вами в ближайшее время.</div>
+                    <div className="lg:text-[24px] font-medium tracking-tightest text-neutral-gray text-center">Мы свяжемся с вами в ближайшее время.</div>
                ) : (
                     <form onSubmit={formik.handleSubmit} className="flex flex-col gap-4 backdrop-blur-sm">
                          <div className={`grid ${wrapperClassName}`}>
