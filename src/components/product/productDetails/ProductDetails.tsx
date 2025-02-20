@@ -2,6 +2,7 @@ import NextBreadcrumb from "@/components/common/Breadcrumbs";
 import Image from "next/image";
 import wifi from "@img/product/wifi.png";
 import inverter from "@img/product/Inverter.png";
+import ProductModels from "./ProductModels";
 
 interface Props {
      locale: string;
@@ -40,6 +41,12 @@ const ProductDetails: React.FC<Props> = ({ locale }) => {
                          );
                     })}
                </div>
+               <div className="mt-10">
+                    <h2 className="font-semibold text-[22px]">Все модели Alba</h2>
+                    <ProductModels locale={locale} />
+               </div>
+               <div className="mt-10 text-[35px] font-semibold">2 000 000 Сум</div>
+               <button className="mt-10 rounded-2xl text-white bg-black text-[24px] flex items-center justify-center p-5 text-center w-full">Оставить заявку</button>
           </div>
      );
 };
