@@ -25,7 +25,7 @@ const ProductDetails: React.FC<Props> = ({ locale }) => {
           <div className="">
                <NextBreadcrumb homeElement="Главная" separator="/" />
                <div className="mt-5 flex flex-col gap-8">
-                    <h1 className="text-[35px] font-semibold">Настенный кондиционер Alba Midea</h1>
+                    <h1 className="text-[35px] font-semibold leading-120%">Настенный кондиционер Alba Midea</h1>
                     <p className="leading-130% text-[18px] tracking-tight">
                          Расширьте свои возможности съёмки с DJI Air 3S — мощным дроном с двумя камерами, который идеально подходит для путешествий. С широкоугольной и телекамерой,
                          а также поддержкой интеллектуальных режимов съёмки, этот дрон позволит вам запечатлеть моменты с максимальной точностью и деталями.

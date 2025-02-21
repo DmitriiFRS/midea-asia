@@ -10,6 +10,9 @@ body {
      @apply h-full w-full;
 }
 @layer base {
+     html {
+          scroll-behavior: smooth;
+     }
      body {
           line-height: 1;
           padding: 0px;
