@@ -10,7 +10,7 @@ interface Props {
 
 const CatalogList: React.FC<Props> = ({ locale, items }) => {
      return (
-          <section className="mt-[80px] mb-20">
+          <section className="m-20">
                <div className="flex flex-col gap-20">
                     {items.map((el) => {
                          return (

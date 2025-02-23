@@ -11,7 +11,7 @@ interface Props {
 const ProductListForm: React.FC<Props> = ({ locale }) => {
      const [success, setSuccess] = useState(false);
      return (
-          <div className="w-full h-auto aspect-square col-start-4 row-start-1 rounded-lg p-3 bg-gray-300 relative">
+          <div className="w-full h-auto col-start-3 row-start-1 rounded-lg p-3 bg-gray-300 relative flex flex-col py-5 xl:col-start-4">
                <div className="absolute inset-0">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="100%" height="200px">
                          <path
@@ -23,7 +23,7 @@ const ProductListForm: React.FC<Props> = ({ locale }) => {
                     </svg>
                </div>
                {!success && <h2 className="text-[25px] font-semibold leading-120%">Поможем сделать правильный выбор</h2>}
-               <Form locale={locale} success={success} setSuccess={setSuccess} wrapperClassName="grid-cols-1 mt-5 gap-4" sendButtonTitle="Заказать звонок" />
+               <Form locale={locale} success={success} setSuccess={setSuccess} wrapperClassName="grid-cols-1 gap-4 h-full" sendButtonTitle="Заказать звонок" />
           </div>
      );
 };

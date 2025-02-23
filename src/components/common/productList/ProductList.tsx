@@ -3,6 +3,7 @@ import Image from "next/image";
 import ProductListForm from "./ProductListForm";
 import bg from "@/../public/images/catalog/winter-bg.webp";
 import Link from "next/link";
+import CommonButton from "../commonButton/CommonButton";
 
 interface Props {
      locale: string;
@@ -67,18 +68,23 @@ const products = [
 
 const ProductList: React.FC<Props> = ({ locale }) => {
      return (
-          <div className="mt-10 grid grid-cols-4 gap-x-5 gap-y-10 h-full pb-20">
-               <Image src={bg} alt="" width={1920} height={1080} className="fixed left-0 top-0 w-screen h-screen object-cover -z-10 opacity-15" />
+          <div className="mt-10 grid grid-cols-3 gap-x-5 gap-y-10 h-full pb-20 xl:grid-cols-4">
                <ProductListForm locale={locale} />
                {products.map((el) => {
                     return (
-                         <Link href={"/"} key={el.id} className="group">
-                              <div className="w-full h-auto aspect-square rounded-lg  border bg-white/20 border-gray-300 shadow-md group-hover:bg-[#e3e3e3] duration-500">
-                                   <Image src={el.image} alt="alt" width={300} height={300} className="w-full h-full group-hover:scale-105 duration-500" />
-                              </div>
-                              <div className="mt-5 flex justify-between px-2 font-medium">
-                                   <div className="text-[16px]">Кондиционер {el.title}</div>
-                                   <div>От {el.price} сум</div>
+                         <Link
+                              href={"/"}
+                              key={el.id}
+                              className="group block h-auto w-full aspect-square rounded-lg  border bg-white/20 border-gray-300 shadow-md group-hover:bg-[#e3e3e3] duration-500 p-5"
+                         >
+                              <Image src={el.image} alt="alt" width={300} height={300} className="w-full max-w-[200px] h-auto mx-auto group-hover:scale-105 duration-500" />
+                              <div className="flex flex-col gap-3 mt-3 h-auto">
+                                   <div className="font-semibold text-blue text-[18px]">От {el.price} Сум</div>
+                                   <div className="flex-[1_1_auto] text-[16px] font-medium">Настенный кондиционер {el.title}</div>
+                                   <div className="opacity-60 font-medium text-[14px]">Бренд: Midea</div>
+                                   <CommonButton className="p-[10px_!important] border border-black group-hover:bg-transparent duration-500 group-hover:text-black">
+                                        Подробнее
+                                   </CommonButton>
                               </div>
                          </Link>
                     );
@@ -88,3 +94,12 @@ const ProductList: React.FC<Props> = ({ locale }) => {
 };
 
 export default ProductList;
+/*
+<div className="w-full h-auto aspect-square rounded-lg  border bg-white/20 border-gray-300 shadow-md group-hover:bg-[#e3e3e3] duration-500 p-5">
+                                   <Image src={el.image} alt="alt" width={300} height={300} className="w-full h-full group-hover:scale-105 duration-500" />
+                                   <div className="mt-5 flex justify-between px-2 font-medium">
+                                        <div className="text-[16px]">Кондиционер {el.title}</div>
+                                        <div>От {el.price} сум</div>
+                                   </div>
+                              </div>
+*/

@@ -65,8 +65,8 @@ const Form: React.FC<Props> = ({ locale, success, setSuccess, additionalFields, 
                {success ? (
                     <div className="lg:text-[24px] font-medium tracking-tightest text-neutral-gray text-center">Мы свяжемся с вами в ближайшее время.</div>
                ) : (
-                    <form onSubmit={formik.handleSubmit} className="flex flex-col gap-4 backdrop-blur-sm">
-                         <div className={`grid ${wrapperClassName}`}>
+                    <form onSubmit={formik.handleSubmit} className="flex flex-col gap-4 backdrop-blur-sm h-full">
+                         <div className={`grid mt-10 ${wrapperClassName}`}>
                               <InputField
                                    locale={locale}
                                    name="name"
@@ -95,13 +95,15 @@ const Form: React.FC<Props> = ({ locale, success, setSuccess, additionalFields, 
                                    />
                               </div>
 
-                              <div className="mt-4 md:flex md:items-start">
+                              <div className="md:flex md:items-end">
                                    {loading ? (
                                         <div className="flex w-full items-center justify-center">
                                              <Loader />
                                         </div>
                                    ) : (
-                                        <CommonButton>{sendButtonTitle || "Отправить"}</CommonButton>
+                                        <CommonButton className="hover:bg-transparent border border-black hover:text-black duration-500">
+                                             {sendButtonTitle || "Отправить"}
+                                        </CommonButton>
                                    )}
                               </div>
                          </div>
