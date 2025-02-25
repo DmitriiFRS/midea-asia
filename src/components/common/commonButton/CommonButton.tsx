@@ -10,7 +10,7 @@ const CommonButton: React.FC<Props> = ({ children, className, href }) => {
      return href ? (
           <Link
                href={href}
-               className={`flex items-center justify-center bg-black text-white text-[24px] max-w-[200px] rounded-md font-medium hover:bg-white hover:text-black duration-300 w-full h-[60px] ${className}`}
+               className={`flex items-center justify-center bg-black text-white max-w-[200px] rounded-md font-medium hover:bg-white hover:text-black duration-300 w-full h-[60px] ${className}`}
           >
                {children}
           </Link>
