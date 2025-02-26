@@ -18,6 +18,7 @@ body {
           padding: 0px;
           margin: 0px;
           background: #f4f4f4;
+          font-size: 14px;
      }
      .wrapper {
           display: flex;

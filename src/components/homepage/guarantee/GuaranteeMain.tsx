@@ -2,16 +2,16 @@ import GuaranteeSwiper from "./GuaranteeSwiper";
 import GuaranteeText from "./GuaranteeText";
 
 interface Props {
-  locale: string;
+     locale: string;
 }
 
 const GuaranteeMain: React.FC<Props> = ({ locale }) => {
-  return (
-    <div className="flex gap-[30px]">
-      <GuaranteeSwiper locale={locale} />
-      <GuaranteeText locale={locale} />
-    </div>
-  );
+     return (
+          <div className="grid grid-cols-2 gap-10">
+               <GuaranteeSwiper locale={locale} />
+               <GuaranteeText locale={locale} />
+          </div>
+     );
 };
 
 export default GuaranteeMain;

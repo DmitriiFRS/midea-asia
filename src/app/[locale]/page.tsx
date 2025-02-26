@@ -4,8 +4,6 @@ import Guarantee from "@/components/homepage/guarantee/Guarantee";
 import Hero from "@/components/homepage/hero/Hero";
 import HomepageForm from "@/components/homepage/homepageForm/HomepageForm";
 import MiniCatalog from "@/components/homepage/miniCatalog/MiniCatalog";
-import SubheroTitle from "@/components/homepage/subheroTitle/SubheroTitle";
-import Image from "next/image";
 
 interface Props {
      params: Promise<{
