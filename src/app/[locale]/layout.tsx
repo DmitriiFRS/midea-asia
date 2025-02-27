@@ -30,19 +30,14 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
                href: "/delivery",
           },
           {
-               id: 2,
-               title: "О нас",
-               href: "/about",
-          },
-          {
                id: 3,
                title: "Новости",
                href: "/news",
           },
           {
                id: 4,
-               title: "Контакты",
-               href: "/contacts",
+               title: "Наши проекты",
+               href: "/projects",
           },
      ];
      return (

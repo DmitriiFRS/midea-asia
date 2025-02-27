@@ -16,9 +16,10 @@ interface Props {
      additionalFields?: "comment"[];
      wrapperClassName?: string;
      sendButtonTitle?: string;
+     commonBtnClassName?: string;
 }
 
-const Form: React.FC<Props> = ({ locale, success, setSuccess, additionalFields, wrapperClassName, sendButtonTitle }) => {
+const Form: React.FC<Props> = ({ locale, success, setSuccess, additionalFields, wrapperClassName, commonBtnClassName, sendButtonTitle }) => {
      const [loading, setLoading] = useState(false);
      const formik = useFormik({
           initialValues: {
@@ -94,32 +95,31 @@ const Form: React.FC<Props> = ({ locale, success, setSuccess, additionalFields, 
                                         errors={formik.errors.phone}
                                    />
                               </div>
-
+                              {additionalFields && additionalFields.includes("comment") && (
+                                   <div className="">
+                                        <InputField
+                                             locale={locale}
+                                             name="comment"
+                                             placeholder="Сообщение"
+                                             value={formik.values.comment}
+                                             onChange={formik.handleChange}
+                                             onBlur={formik.handleBlur}
+                                             isRequired={false}
+                                        />
+                                   </div>
+                              )}
                               <div className="md:flex md:items-end">
                                    {loading ? (
                                         <div className="flex w-full items-center justify-center">
                                              <Loader />
                                         </div>
                                    ) : (
-                                        <CommonButton className="hover:bg-transparent border border-black hover:text-black duration-500">
+                                        <CommonButton className={`max-w-[300px] hover:bg-transparent border border-black hover:text-black duration-500 ${commonBtnClassName}`}>
                                              {sendButtonTitle || "Отправить"}
                                         </CommonButton>
                                    )}
                               </div>
                          </div>
-                         {additionalFields && additionalFields.includes("comment") && (
-                              <div className="">
-                                   <InputField
-                                        locale={locale}
-                                        name="comment"
-                                        placeholder="Сообщение"
-                                        value={formik.values.comment}
-                                        onChange={formik.handleChange}
-                                        onBlur={formik.handleBlur}
-                                        isRequired={false}
-                                   />
-                              </div>
-                         )}
                     </form>
                )}
           </>

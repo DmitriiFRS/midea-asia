@@ -6,6 +6,7 @@ import logo from "@img/common/logo.svg";
 import Link from "next/link";
 import LangSwitcher from "../common/langSwitcher/LangSwitcher";
 import { useEffect, useState } from "react";
+import Burger from "./Burger";
 
 interface Props {
      locale: string;
@@ -35,14 +36,14 @@ const Header: React.FC<Props> = ({ locale, nav }) => {
           isSticky();
      }, []);
 
-     const leftNav = nav.slice(0, 3);
-     const rightNav = nav.slice(3, 5);
+     const leftNav = nav.slice(0, 2);
+     const rightNav = nav.slice(2, 4);
      return (
           <header className={`left-0 top-0 w-full z-50 h-[100px] text-white ${sticky ? "fixed" : "absolute"}`}>
                <div className="bg-black opacity-25 w-full h-full absolute left-0 top-0 -z-10"></div>
                <Container className="h-full flex justify-between items-center">
-                    <nav>
-                         <ul className="flex gap-8">
+                    <nav className="hidden md:block">
+                         <ul className="flex gap-6 lg:gap-8">
                               {leftNav.map((el) => (
                                    <li key={el.id} className="relative z-10">
                                         <Link href={`/${locale}${el.href}`}>
@@ -52,11 +53,11 @@ const Header: React.FC<Props> = ({ locale, nav }) => {
                               ))}
                          </ul>
                     </nav>
-                    <Link className="aspect-[300/100] max-w-[200px] w-full h-auto" href={`/${locale}`}>
+                    <Link className="aspect-[300/100] max-w-[120px] w-full h-auto md:max-w-[200px]" href={`/${locale}`}>
                          <Image src={logo} alt="Midea" width={300} height={100} className="w-full h-full object-contain" />
                     </Link>
-                    <div className="flex gap-[120px]">
-                         <ul className="flex gap-8">
+                    <div className="gap-10 items-center lg:gap-[120px] hidden md:flex">
+                         <ul className="flex gap-6 lg:gap-8">
                               {rightNav.map((el) => (
                                    <li key={el.id} className="relative z-10">
                                         <Link href={`/${locale}${el.href}`}>
@@ -67,6 +68,7 @@ const Header: React.FC<Props> = ({ locale, nav }) => {
                          </ul>
                          <LangSwitcher locale={locale} />
                     </div>
+                    <Burger locale={locale} />
                </Container>
           </header>
      );

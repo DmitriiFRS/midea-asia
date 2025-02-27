@@ -15,7 +15,7 @@ const CommonButton: React.FC<Props> = ({ children, className, href }) => {
                {children}
           </Link>
      ) : (
-          <button className={`bg-gray-900 text-white p-4 rounded-xl text-base w-full ${className}`}>{children}</button>
+          <button className={`bg-gray-900 text-white p-4 rounded-xl w-full ${className}`}>{children}</button>
      );
 };
 

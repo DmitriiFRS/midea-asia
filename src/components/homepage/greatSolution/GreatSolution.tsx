@@ -43,15 +43,15 @@ const GreatSolution: React.FC<Props> = ({ locale }) => {
      return (
           <section className="mt-[100px]">
                <Container>
-                    <h2 className="text-[42px] font-bold leading-130% uppercase text-center">Надёжность и комфорт с первого дня</h2>
-                    <ul className="flex gap-4 justify-between mt-[60px]">
+                    <h2 className="text-[30px] font-bold leading-130% uppercase text-center md:text-[42px]">Надёжность и комфорт с первого дня</h2>
+                    <ul className="grid grid-cols-2 md:grid-cols-4 gap-x-2.5 gap-y-5 md:gap-y-0 text-center mt-[60px]">
                          {cards.map((el) => {
                               return (
                                    <li key={el.id} className="flex flex-col gap-[30px] items-center">
                                         <div className="max-w-[50px] h-auto aspect aspect-square">
                                              <Image src={el.img} alt="icon" height={100} width={100} className="w-full h-full" />
                                         </div>
-                                        <span className="text-[18px] font-medium text-light-black">{el.title}</span>
+                                        <span className="text-[16px] md:text-[18px] font-medium text-light-black">{el.title}</span>
                                    </li>
                               );
                          })}

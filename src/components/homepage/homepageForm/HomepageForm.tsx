@@ -19,13 +19,14 @@ const HomepageForm: React.FC<Props> = ({ locale }) => {
                               <div className="mt-5 text-[20px] leading-120% font-medium">Оставьте заявку и мы свяжемся с вами в ближайшее время</div>
                          </div>
                     )}
-                    <div className="px-10">
+                    <div className="px-5 md:px-10">
                          <Form
                               locale={locale}
                               success={success}
                               setSuccess={setSuccess}
                               additionalFields={["comment"]}
-                              wrapperClassName="grid-cols-[1fr_1fr_20%] mt-20 gap-[30px]"
+                              wrapperClassName="grid-cols-1 md:grid-cols-2 mt-20 gap-[30px]"
+                              commonBtnClassName="text-[#000_!important] hover:text-[#fff_!important] text-[20px] bg-white"
                          />
                     </div>
                </Container>

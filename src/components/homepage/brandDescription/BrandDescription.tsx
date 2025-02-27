@@ -4,23 +4,20 @@ import BrandDescriptionBottom from "./BrandDescriptionBottom";
 import BrandDescriptionTop from "./BrandDescriptionTop";
 
 interface Props {
-  locale: string;
+     locale: string;
 }
 
 const BrandDescription: React.FC<Props> = ({ locale }) => {
-  return (
-    <section className="mt-[100px]">
-      <div>
-        <BrandDescriptionTop locale={locale} />
-      </div>
-      <div>
-        <BrandDescriptionBottom locale={locale} />
-      </div>
-      <Container>
-        <CommonButton2 className="mt-5">Перейти в каталог</CommonButton2>
-      </Container>
-    </section>
-  );
+     return (
+          <section className="mt-[100px]">
+               <div>
+                    <BrandDescriptionTop locale={locale} />
+               </div>
+               <div>
+                    <BrandDescriptionBottom locale={locale} />
+               </div>
+          </section>
+     );
 };
 
 export default BrandDescription;
