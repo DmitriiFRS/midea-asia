@@ -41,6 +41,9 @@ body {
      .section-margin {
           margin-top: 180px;
      }
+     .burger-modal {
+          backdrop-filter: blur(12px);
+     }
      @media (max-width: 768px) {
           .section-margin {
                margin-top: 80px;
