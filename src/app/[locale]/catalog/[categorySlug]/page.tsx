@@ -2,7 +2,6 @@ import Container from "@/components/common/container/Container";
 import ProductList from "@/components/common/productList/ProductList";
 import { getCategories } from "@/fetch/getCategories";
 import { getDollarValue } from "@/fetch/getDollarValue";
-import { notFound } from "next/navigation";
 
 interface Props {
      params: Promise<{
