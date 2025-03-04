@@ -24,63 +24,6 @@ export interface ProductsPagination {
      total: number;
 }
 
-const products = [
-     {
-          id: 0,
-          title: "Alba",
-          price: "10000000",
-          image: alba,
-     },
-     {
-          id: 1,
-          title: "Alba",
-          price: "10000000",
-          image: alba,
-     },
-     {
-          id: 2,
-          title: "Alba",
-          price: "10000000",
-          image: alba,
-     },
-     {
-          id: 3,
-          title: "Alba",
-          price: "10000000",
-          image: alba,
-     },
-     {
-          id: 4,
-          title: "Alba",
-          price: "10000000",
-          image: alba,
-     },
-     {
-          id: 5,
-          title: "Alba",
-          price: "10000000",
-          image: alba,
-     },
-     {
-          id: 6,
-          title: "Alba",
-          price: "10000000",
-          image: alba,
-     },
-     {
-          id: 7,
-          title: "Alba",
-          price: "10000000",
-          image: alba,
-     },
-     {
-          id: 8,
-          title: "Alba",
-          price: "10000000",
-          image: alba,
-     },
-];
-
 const ProductList: React.FC<Props> = ({ locale, categorySlug, dollarValue }) => {
      const [page, setPage] = useQueryState("page", parseAsInteger.withDefault(1));
      const [brandValue, setBrandValue] = useQueryState("brand", parseAsString);
@@ -132,9 +75,12 @@ const ProductList: React.FC<Props> = ({ locale, categorySlug, dollarValue }) => 
                                              className="w-full max-w-[200px] h-auto aspect-square mx-auto group-hover:scale-105 duration-500 object-contain"
                                         />
                                         <div className="flex flex-col gap-3 mt-3 h-auto">
-                                             <div className="font-semibold text-blue text-[18px]">
-                                                  {priceFrom ? `Цена от ${priceFrom.toLocaleString()} Сум` : `Цена: ${price?.toLocaleString()} Сум`}
-                                             </div>
+                                             {priceFrom ||
+                                                  (price && (
+                                                       <div className="font-semibold text-blue text-[18px]">
+                                                            {priceFrom ? `Цена от ${priceFrom.toLocaleString()} Сум` : `Цена: ${price?.toLocaleString()} Сум`}
+                                                       </div>
+                                                  ))}
                                              <div className="flex-[1_1_auto] text-[16px] font-medium">{el.name}</div>
                                              <div className="opacity-60 font-medium text-[14px]">Бренд: {el.brand.title}</div>
                                              <CommonButton className="p-[10px_!important] min-w-full border border-black group-hover:bg-transparent duration-500 group-hover:text-black">
@@ -162,12 +108,3 @@ const ProductList: React.FC<Props> = ({ locale, categorySlug, dollarValue }) => 
 };
 
 export default ProductList;
-/*
-<div className="w-full h-auto aspect-square rounded-lg  border bg-white/20 border-gray-300 shadow-md group-hover:bg-[#e3e3e3] duration-500 p-5">
-                                   <Image src={el.image} alt="alt" width={300} height={300} className="w-full h-full group-hover:scale-105 duration-500" />
-                                   <div className="mt-5 flex justify-between px-2 font-medium">
-                                        <div className="text-[16px]">Кондиционер {el.title}</div>
-                                        <div>От {el.price} сум</div>
-                                   </div>
-                              </div>
-*/

@@ -44,6 +44,9 @@ body {
      .burger-modal {
           backdrop-filter: blur(12px);
      }
+     .product-description p {
+          max-width: 1000px;
+     }
      @media (max-width: 768px) {
           .section-margin {
                margin-top: 80px;
