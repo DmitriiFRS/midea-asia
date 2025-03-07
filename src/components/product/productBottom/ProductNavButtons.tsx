@@ -23,7 +23,7 @@ const ProductNavButtons: React.FC<Props> = ({ locale }) => {
      }, []);
 
      return (
-          <div className={`bg-slate-200 flex rounded-full justify-center w-max font-medium text-[16px] }`}>
+          <div className={`bg-slate-200 flex rounded-full justify-center w-max font-medium text-[14px] xs:text-[16px]`}>
                <button>
                     <a
                          href="#productDescription"

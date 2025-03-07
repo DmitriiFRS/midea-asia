@@ -24,7 +24,7 @@ const page: React.FC<Props> = async ({ params }) => {
                     <section className="section-margin pb-[120px]">
                          <ProductContextProvider>
                               <Container>
-                                   <div className="grid grid-cols-2 gap-20">
+                                   <div className="grid grid-cols-1 gap-5 lg:gap-20 md:grid-cols-2">
                                         <ProductSlider images={data.images} />
                                         <ProductDetails locale={locale} product={data} dollarValue={dollarValue.data.value} />
                                    </div>

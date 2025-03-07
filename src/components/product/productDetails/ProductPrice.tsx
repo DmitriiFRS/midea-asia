@@ -14,7 +14,7 @@ const ProductPrice: React.FC<Props> = ({ lng, product, dollarValue }) => {
      const { currentModel, setCurrentModel } = useProductContext();
      return (
           currentModel && (
-               <div className="mt-10 text-[35px] font-semibold">
+               <div className="mt-5 text-[28px] font-semibold lg:mt-10 lg:text-[35px]">
                     {product.variation ? (currentModel.price && currentModel.price * dollarValue)?.toLocaleString() + " Сум" : product.price + " Сум"}
                </div>
           )
