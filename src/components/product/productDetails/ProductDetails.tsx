@@ -5,13 +5,15 @@ import inverter from "@img/product/Inverter.png";
 import ProductModels from "./ProductModels";
 import { Product } from "@/interfaces/products.interface";
 import { strapiUrl } from "@/utils/consts";
+import ProductPrice from "./ProductPrice";
 
 interface Props {
      locale: string;
      product: Product;
+     dollarValue: number;
 }
 
-const ProductDetails: React.FC<Props> = ({ locale, product }) => {
+const ProductDetails: React.FC<Props> = ({ locale, product, dollarValue }) => {
      return (
           <div className="">
                <NextBreadcrumb homeElement="Главная" separator="/" />
@@ -34,9 +36,9 @@ const ProductDetails: React.FC<Props> = ({ locale, product }) => {
                </div>
                <div className="mt-10">
                     <h2 className="font-semibold text-[22px]">Все модели</h2>
-                    <ProductModels locale={locale} models={product.variation} />
+                    {product.variation && <ProductModels locale={locale} models={product.variation} />}
                </div>
-               <div className="mt-10 text-[35px] font-semibold">2 000 000 Сум</div>
+               <ProductPrice lng={locale} product={product} dollarValue={dollarValue} />
                <button className="mt-10 rounded-2xl text-white bg-black text-[24px] flex items-center justify-center p-5 text-center w-full">Оставить заявку</button>
           </div>
      );

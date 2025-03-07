@@ -2,6 +2,7 @@ import { VariationInterface } from "@/interfaces/products.interface";
 import ProductNavButtons from "./ProductNavButtons";
 import ProductParams from "./ProductParams";
 import ReactMarkdown from "react-markdown";
+import ProductModelParams from "./ProductModelParams";
 
 interface Props {
      locale: string;
@@ -23,7 +24,8 @@ const ProductBottom: React.FC<Props> = ({ locale, productDescription, productVar
 
                <div className="mt-[60px]">
                     <h2 className="text-[35px] font-semibold leading-120%">Технические характеристики</h2>
-                    <ProductParams locale={locale} />
+                    <ProductParams locale={locale} params={null} />
+                    <ProductModelParams locale={locale} />
                </div>
           </section>
      );
