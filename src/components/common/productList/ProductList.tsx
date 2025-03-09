@@ -35,7 +35,6 @@ const ProductList: React.FC<Props> = ({ locale, categorySlug, dollarValue }) => 
                setIsLoading(true);
                const response = await getProducts({ locale: locale, limit: 10, page: page, brandValue: brandValue, categoryValue: categorySlug });
                const pagination = response.meta.pagination as ProductsPagination;
-               console.log(pagination);
                setProducts(response.data);
                setPageCount(pagination.pageCount);
                setIsLoading(false);
@@ -75,12 +74,11 @@ const ProductList: React.FC<Props> = ({ locale, categorySlug, dollarValue }) => 
                                              className="w-full max-w-[200px] h-auto aspect-square mx-auto group-hover:scale-105 duration-500 object-contain"
                                         />
                                         <div className="flex flex-col gap-3 mt-3 h-auto">
-                                             {priceFrom ||
-                                                  (price && (
-                                                       <div className="font-semibold text-blue text-[18px]">
-                                                            {priceFrom ? `Цена от ${priceFrom.toLocaleString()} Сум` : `Цена: ${price?.toLocaleString()} Сум`}
-                                                       </div>
-                                                  ))}
+                                             {(priceFrom || price) && (
+                                                  <div className="font-semibold text-blue text-[18px]">
+                                                       {priceFrom ? `Цена от ${priceFrom.toLocaleString()} Сум` : `Цена: ${price?.toLocaleString()} Сум`}
+                                                  </div>
+                                             )}
                                              <div className="flex-[1_1_auto] text-[16px] font-medium">{el.name}</div>
                                              <div className="opacity-60 font-medium text-[14px]">Бренд: {el.brand.title}</div>
                                              <CommonButton className="p-[10px_!important] min-w-full border border-black group-hover:bg-transparent duration-500 group-hover:text-black">

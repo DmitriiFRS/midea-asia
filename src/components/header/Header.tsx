@@ -14,6 +14,7 @@ interface Props {
           id: number;
           title: string;
           href: string;
+          isExternal?: boolean;
      }[];
 }
 
@@ -36,8 +37,8 @@ const Header: React.FC<Props> = ({ locale, nav }) => {
           isSticky();
      }, []);
 
-     const leftNav = nav.slice(0, 2);
-     const rightNav = nav.slice(2, 4);
+     const leftNav = nav.slice(0, 1);
+     const rightNav = nav.slice(1, 2);
      return (
           <header className={`left-0 top-0 w-full z-50 h-[100px] text-white ${sticky ? "fixed" : "absolute"}`}>
                <div className="bg-black opacity-25 w-full h-full absolute left-0 top-0 -z-10"></div>
@@ -46,9 +47,15 @@ const Header: React.FC<Props> = ({ locale, nav }) => {
                          <ul className="flex gap-6 lg:gap-8">
                               {leftNav.map((el) => (
                                    <li key={el.id} className="relative z-10">
-                                        <Link href={`/${locale}${el.href}`}>
-                                             <span className="text-[16px]">{el.title}</span>
-                                        </Link>
+                                        {el.isExternal ? (
+                                             <a target="_blank" href={el.href}>
+                                                  <span className="text-[16px]">{el.title}</span>
+                                             </a>
+                                        ) : (
+                                             <Link href={`/${locale}${el.href}`}>
+                                                  <span className="text-[16px]">{el.title}</span>
+                                             </Link>
+                                        )}
                                    </li>
                               ))}
                          </ul>
@@ -60,15 +67,21 @@ const Header: React.FC<Props> = ({ locale, nav }) => {
                          <ul className="flex gap-6 lg:gap-8">
                               {rightNav.map((el) => (
                                    <li key={el.id} className="relative z-10">
-                                        <Link href={`/${locale}${el.href}`}>
-                                             <span className="text-[16px]">{el.title}</span>
-                                        </Link>
+                                        {el.isExternal ? (
+                                             <a target="_blank" href={el.href}>
+                                                  <span className="text-[16px]">{el.title}</span>
+                                             </a>
+                                        ) : (
+                                             <Link href={`/${locale}${el.href}`}>
+                                                  <span className="text-[16px]">{el.title}</span>
+                                             </Link>
+                                        )}
                                    </li>
                               ))}
                          </ul>
                          <LangSwitcher locale={locale} />
                     </div>
-                    <Burger locale={locale} />
+                    <Burger locale={locale} nav={nav} />
                </Container>
           </header>
      );

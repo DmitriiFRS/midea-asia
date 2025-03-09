@@ -33,10 +33,18 @@ const ProductDetails: React.FC<Props> = ({ locale, product, dollarValue }) => {
                               );
                          })}
                </div>
-               <div className="mt-5 lg:mt-10">
-                    <h2 className="font-semibold text-[18px] lg:text-[22px]">Все модели</h2>
-                    {product.variation && <ProductModels locale={locale} models={product.variation} />}
-               </div>
+               {product.variation && (
+                    <div className="mt-5 lg:mt-10">
+                         <div className="flex flex-col justify-between gap-5 xs:gap-3 xs:items-center xs:flex-row">
+                              <h2 className="font-semibold text-[18px] lg:text-[22px]">Все модели</h2>
+                              <a href="#productParams" className="font-semibold text-[14px] lg:text-[16px] rounded-full underline underline-offset-4 hover:no-underline">
+                                   Посмотреть характеристики модели
+                              </a>
+                         </div>
+
+                         <ProductModels locale={locale} models={product.variation} />
+                    </div>
+               )}
                <ProductPrice lng={locale} product={product} dollarValue={dollarValue} />
                <ProductFormButton />
           </div>

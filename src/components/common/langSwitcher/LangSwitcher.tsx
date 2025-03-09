@@ -11,9 +11,10 @@ import arrow from "@icons/common/arrow-tobottom.svg";
 interface Props {
      locale: string;
      inModal?: boolean;
+     inBurger?: boolean;
 }
 
-const LangSwitcher: React.FC<Props> = ({ locale, inModal }) => {
+const LangSwitcher: React.FC<Props> = ({ locale, inModal, inBurger }) => {
      const [isOpen, setIsOpen] = useState(false);
      const localesArray = ["ru", "uz"];
      const locales = {
@@ -25,14 +26,17 @@ const LangSwitcher: React.FC<Props> = ({ locale, inModal }) => {
           if (currentLng === locale) return;
           const scrollWidth = window.innerWidth - document.body.clientWidth;
           if (isOpen) {
-               if (!inModal) {
+               if (!inModal && !inBurger) {
                     document.body.style.overflow = "auto";
                     document.body.style.paddingRight = `0px`;
                }
                setIsOpen(false);
           } else {
-               document.body.style.overflow = "hidden";
-               document.body.style.paddingRight = `${scrollWidth}px`;
+               if (inModal && !inBurger) {
+                    document.body.style.overflow = "hidden";
+                    document.body.style.paddingRight = `${scrollWidth}px`;
+               }
+
                setIsOpen(true);
           }
      }

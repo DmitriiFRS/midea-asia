@@ -3,12 +3,20 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import logoBlack from "@img/common/midea-black.webp";
 import close from "@icons/common/close.svg";
+import LangSwitcher from "../common/langSwitcher/LangSwitcher";
+import Link from "next/link";
 
 interface Props {
      locale: string;
+     nav: {
+          id: number;
+          title: string;
+          href: string;
+          isExternal?: boolean;
+     }[];
 }
 
-const Burger: React.FC<Props> = ({ locale }) => {
+const Burger: React.FC<Props> = ({ locale, nav }) => {
      const [isOpen, setIsOpen] = useState(false);
      useEffect(() => {
           const scrollbarWidth = window.innerWidth - document.body.clientWidth;
@@ -47,7 +55,7 @@ const Burger: React.FC<Props> = ({ locale }) => {
                                    animate={{ x: 0 }}
                                    exit={{ x: 1000 }}
                                    transition={{ duration: 0.5 }}
-                                   className="bg-[#E7F1FA] px-4 relative z-10 w-[70vw] h-full"
+                                   className="bg-[#E7F1FA] px-4 relative z-10 w-[70vw] h-full flex flex-col justify-between text-black"
                                    onClick={(e) => e.stopPropagation()}
                               >
                                    <div className="flex justify-between mt-5">
@@ -55,6 +63,26 @@ const Burger: React.FC<Props> = ({ locale }) => {
                                         <button className="p-2.5" onClick={() => setIsOpen(false)}>
                                              <Image src={close} alt="close" width={20} height={20} className="" />
                                         </button>
+                                   </div>
+                                   <nav className="flex justify-center">
+                                        <ul className="flex flex-col items-center font-medium text-[22px] gap-10 lg:gap-8">
+                                             {nav.map((el) => (
+                                                  <li key={el.id} className="relative z-10">
+                                                       {el.isExternal ? (
+                                                            <a target="_blank" onClick={() => setIsOpen(false)} href={el.href}>
+                                                                 <span>{el.title}</span>
+                                                            </a>
+                                                       ) : (
+                                                            <Link href={`/${locale}${el.href}`} onClick={() => setIsOpen(false)}>
+                                                                 <span>{el.title}</span>
+                                                            </Link>
+                                                       )}
+                                                  </li>
+                                             ))}
+                                        </ul>
+                                   </nav>
+                                   <div className="flex justify-center mb-[100px]">
+                                        <LangSwitcher locale={locale} inBurger />
                                    </div>
                               </motion.div>
                          </motion.div>

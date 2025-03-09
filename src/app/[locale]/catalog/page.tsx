@@ -45,7 +45,7 @@ const page: React.FC<Props> = async ({ params }) => {
                     {
                          id: 1,
                          title: "Канальные кондиционеры",
-                         href: "/catalog/channel-air-conditioners",
+                         href: "/catalog/ducted-air-conditioners",
                          image: channels,
                     },
                     {
@@ -105,7 +105,7 @@ const page: React.FC<Props> = async ({ params }) => {
                     {
                          id: 0,
                          title: "VRF Системы",
-                         href: "/catalog/vrf-systems",
+                         href: "/catalog/vrf",
                          image: vrf,
                     },
                     {

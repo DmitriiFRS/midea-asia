@@ -12,7 +12,7 @@ interface Props {
 const LangDropdown: React.FC<Props> = ({ locale, locales, isOpen, redirectedPathName, localesArray, toggleDropdown }) => {
      return (
           <div
-               className={`z-[70] text-[16px] absolute left-0 top-6 w-full h-auto flex ml-2 flex-col gap-4 duration-300  ${
+               className={`z-[70] text-[16px] absolute -left-2 top-6 w-full h-auto flex ml-2 flex-col gap-4 p-4 duration-300 bg-white rounded-lg ${
                     isOpen ? "translate-y-4 visible opacity-100" : "translate-y-0 invisible opacity-0"
                }`}
           >
@@ -20,7 +20,7 @@ const LangDropdown: React.FC<Props> = ({ locale, locales, isOpen, redirectedPath
                     return (
                          <Link className="" key={index} href={redirectedPathName(el)}>
                               <button onClick={() => toggleDropdown(el)}>
-                                   <span className={`${locale === el ? "opacity-50" : ""}`}>{locales[el]}</span>
+                                   <span className={`text-black font-medium ${locale === el ? "opacity-50" : ""}`}>{locales[el]}</span>
                               </button>
                          </Link>
                     );

@@ -25,20 +25,21 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
                title: "Каталог",
                href: "/catalog",
           },
-          {
+          /*{
                id: 1,
                title: "Доставка и оплата",
                href: "/delivery",
-          },
-          {
+          },*/
+          /*{
                id: 3,
                title: "Новости",
                href: "/news",
-          },
+          },*/
           {
                id: 4,
                title: "Наши проекты",
-               href: "/projects",
+               href: "https://admin.climate-academy.uz/uploads/Nashi_Obekty_e547bbd9ee.pdf",
+               isExternal: true,
           },
      ];
      return (
