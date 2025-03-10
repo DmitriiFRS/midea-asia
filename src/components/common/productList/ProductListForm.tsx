@@ -11,7 +11,7 @@ interface Props {
 const ProductListForm: React.FC<Props> = ({ locale }) => {
      const [success, setSuccess] = useState(false);
      return (
-          <div className="w-full h-auto col-start-3 row-start-1 rounded-lg p-3 bg-gray-300 relative flex flex-col py-5 xl:col-start-4">
+          <div className="hidden lmd:flex w-full h-auto col-start-2 row-start-1 rounded-lg p-3 bg-gray-300 relative flex-col py-5 lmd:col-start-3 xl:col-start-4">
                <div className="absolute inset-0">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="100%" height="200px">
                          <path

@@ -40,7 +40,7 @@ const Header: React.FC<Props> = ({ locale, nav }) => {
      const leftNav = nav.slice(0, 1);
      const rightNav = nav.slice(1, 2);
      return (
-          <header className={`left-0 top-0 w-full z-50 h-[100px] text-white ${sticky ? "fixed" : "absolute"}`}>
+          <header className={`left-0 top-0 w-full z-50 h-[80px] text-white ${sticky ? "fixed" : "absolute"}`}>
                <div className="bg-black opacity-25 w-full h-full absolute left-0 top-0 -z-10"></div>
                <Container className="h-full flex justify-between items-center">
                     <nav className="hidden md:block">

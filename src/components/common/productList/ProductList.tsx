@@ -48,7 +48,7 @@ const ProductList: React.FC<Props> = ({ locale, categorySlug, dollarValue }) => 
      }
      return (
           <>
-               <div className="mt-10 grid grid-cols-3 gap-x-5 gap-y-10 h-full pb-20 xl:grid-cols-4">
+               <div className="mt-10 grid items-stretch grid-cols-1 gap-x-5 gap-y-10 h-full pb-20 xs:grid-cols-2 lmd:grid-cols-3 xl:grid-cols-4">
                     <ProductListForm locale={locale} />
                     {products.length &&
                          products.map((el) => {
@@ -64,7 +64,7 @@ const ProductList: React.FC<Props> = ({ locale, categorySlug, dollarValue }) => 
                                    <Link
                                         href={`/${locale}/catalog/${categorySlug}/${el.slug}`}
                                         key={el.id}
-                                        className="group block h-auto w-full aspect-square rounded-lg  border bg-white/20 border-gray-300 shadow-md group-hover:bg-[#e3e3e3] duration-500 p-5"
+                                        className="group flex flex-col h-auto w-full aspect-square rounded-lg border bg-white/20 border-gray-300 shadow-md group-hover:bg-[#e3e3e3] duration-500 p-5"
                                    >
                                         <Image
                                              src={strapiUrl + el.previewImage.url}
@@ -73,15 +73,15 @@ const ProductList: React.FC<Props> = ({ locale, categorySlug, dollarValue }) => 
                                              height={300}
                                              className="w-full max-w-[200px] h-auto aspect-square mx-auto group-hover:scale-105 duration-500 object-contain"
                                         />
-                                        <div className="flex flex-col gap-3 mt-3 h-auto">
+                                        <div className="flex flex-col gap-3 mt-3 flex-[1_1_auto] justify-end">
                                              {(priceFrom || price) && (
-                                                  <div className="font-semibold text-blue text-[18px]">
+                                                  <div className="font-semibold text-blue text-[16px] sm:text-[18px]">
                                                        {priceFrom ? `Цена от ${priceFrom.toLocaleString()} Сум` : `Цена: ${price?.toLocaleString()} Сум`}
                                                   </div>
                                              )}
-                                             <div className="flex-[1_1_auto] text-[16px] font-medium">{el.name}</div>
+                                             <div className="flex-[1_1_auto] text-[14px] sm:text-[16px] font-medium">{el.name}</div>
                                              <div className="opacity-60 font-medium text-[14px]">Бренд: {el.brand.title}</div>
-                                             <CommonButton className="p-[10px_!important] min-w-full border border-black group-hover:bg-transparent duration-500 group-hover:text-black">
+                                             <CommonButton className="p-[10px_!important] min-w-full border border-black group-hover:bg-transparent duration-500 group-hover:text-black text-[14px] sm:text-[16px]">
                                                   Подробнее
                                              </CommonButton>
                                         </div>
