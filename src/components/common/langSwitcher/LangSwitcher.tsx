@@ -1,6 +1,6 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import LangDropdown from "./LangDropdown";
 import Image, { StaticImageData } from "next/image";
@@ -15,6 +15,7 @@ interface Props {
 }
 
 const LangSwitcher: React.FC<Props> = ({ locale, inModal, inBurger }) => {
+     const router = useRouter();
      const [isOpen, setIsOpen] = useState(false);
      const localesArray = ["ru", "uz"];
      const locales = {
@@ -49,7 +50,8 @@ const LangSwitcher: React.FC<Props> = ({ locale, inModal, inBurger }) => {
           } else {
                segments.splice(1, 0, locale);
           }
-
+          router.push(segments.join("/"));
+          router.refresh();
           return segments.join("/");
      };
      return (

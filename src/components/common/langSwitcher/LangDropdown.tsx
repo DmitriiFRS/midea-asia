@@ -18,11 +18,11 @@ const LangDropdown: React.FC<Props> = ({ locale, locales, isOpen, redirectedPath
           >
                {localesArray.map((el, index) => {
                     return (
-                         <Link className="" key={index} href={redirectedPathName(el)}>
+                         <div className="" key={index} onClick={() => redirectedPathName(el)}>
                               <button onClick={() => toggleDropdown(el)}>
                                    <span className={`text-black font-medium ${locale === el ? "opacity-50" : ""}`}>{locales[el]}</span>
                               </button>
-                         </Link>
+                         </div>
                     );
                })}
           </div>
