@@ -32,7 +32,7 @@ const Footer: React.FC<Props> = ({ locale, nav }) => {
                     <Link className="aspect-[300/100] max-w-[200px] w-full h-auto block" href={`/${locale}`}>
                          <Image src={logo} alt="Midea" width={300} height={100} className="w-full h-full" />
                     </Link>
-                    <div className="flex gap-[120px]">
+                    <nav className="flex gap-[120px]">
                          <ul className="flex gap-8">
                               {rightNav.map((el) => (
                                    <li key={el.id} className="">
@@ -42,7 +42,7 @@ const Footer: React.FC<Props> = ({ locale, nav }) => {
                                    </li>
                               ))}
                          </ul>
-                    </div>
+                    </nav>
                </Container>
                <Container className="text-center mt-[60px]">
                     <p className="mt-[60px] leading-120% text-[#a3a3a3] text-[18px]">

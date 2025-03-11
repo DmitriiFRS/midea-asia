@@ -17,7 +17,7 @@ const Hero: React.FC<Props> = ({ locale }) => {
                          климата в квартирах, офисах и производственных помещениях. Мы предлагаем выгодные условия сотрудничества и сервис, ориентированный на долгосрочную
                          надёжность и экономию.
                     </p>
-                    <CommonButton className="mt-[60px] text-[22px]" href={`/${locale}/catalog`}>
+                    <CommonButton className="mt-[60px] text-[22px]" href={`/catalog`}>
                          Каталог
                     </CommonButton>
                </Container>
