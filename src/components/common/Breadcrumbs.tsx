@@ -3,6 +3,7 @@
 import React, { ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { useLocale } from "next-intl";
 
 type TBreadCrumbProps = {
      homeElement: ReactNode;
@@ -23,8 +24,11 @@ type TBreadCrumbProps = {
 };
 
 const NextBreadcrumb = ({ categoryData, productData, homeElement, separator, className, listClasses, capitalizeLinks }: TBreadCrumbProps) => {
+     const locale = useLocale();
      const pathname = usePathname();
      const paths = usePathname();
+     const segments = pathname.split("/");
+     const localeInPath = ["ru", "uz", "en"].includes(segments[1]) ? segments[1] : "";
      const pathNames = paths.split("/").filter((path) => {
           if (path === "ru" || path === "uz" || path === "en") {
                return;
@@ -39,7 +43,7 @@ const NextBreadcrumb = ({ categoryData, productData, homeElement, separator, cla
                     </li>
                     {pathNames.length > 0 && separator}
                     {pathNames.map((link, index) => {
-                         const href = `/${pathname.split("/")[1]}/${pathNames.slice(0, index + 1).join("/")}`;
+                         const href = localeInPath ? `/${localeInPath}/${pathNames.slice(0, index + 1).join("/")}` : `/${pathNames.slice(0, index + 1).join("/")}`;
                          const itemClasses = paths === href ? "" : "";
                          let itemLink = capitalizeLinks ? link[0].toUpperCase() + link.slice(1, link.length) : link;
                          switch (true) {

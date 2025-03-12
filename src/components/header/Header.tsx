@@ -2,7 +2,7 @@
 
 import Container from "../common/container/Container";
 import Image from "next/image";
-import logo from "@img/common/logo.svg";
+import logo from "@icons/common/ca-logo.webp";
 import Link from "next/link";
 import LangSwitcher from "../common/langSwitcher/LangSwitcher";
 import { useEffect, useState } from "react";

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Container from "../common/container/Container";
 import Image from "next/image";
-import logo from "@img/common/logo.svg";
+import logo from "@icons/common/ca-logo.webp";
 
 interface Props {
      locale: string;

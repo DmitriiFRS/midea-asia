@@ -18,8 +18,8 @@ const ProductSlider = ({ images }: Props) => {
      const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass | null>(null);
      return (
           images && (
-               <div className="flex flex-col gap-6">
-                    <div className="bg-white w-full h-auto aspect-square">
+               <div className="flex flex-col gap-6 ">
+                    <div className=" w-full h-auto aspect-square rounded-lg">
                          <Swiper
                               className="w-full h-full"
                               modules={[Thumbs, A11y]}
@@ -30,8 +30,8 @@ const ProductSlider = ({ images }: Props) => {
                          >
                               {images.map((el, index) => (
                                    <SwiperSlide key={index}>
-                                        <div className="flex items-center justify-center w-full h-full relative">
-                                             <Image src={strapiUrl + el.url} alt="slide" width={459} height={481} className=" w-full h-full object-contain" />
+                                        <div className="flex items-center justify-center w-full h-auto aspect-square relative">
+                                             <Image src={strapiUrl + el.url} alt="slide" width={459} height={481} className=" w-full h-full object-contain rounded-lg" />
                                         </div>
                                    </SwiperSlide>
                               ))}
@@ -41,8 +41,8 @@ const ProductSlider = ({ images }: Props) => {
                          <Swiper grabCursor onSwiper={setThumbsSwiper} slidesPerView={4} spaceBetween={20} freeMode={true} modules={[FreeMode, Thumbs]} className="h-full">
                               {images.map((el, index) => (
                                    <SwiperSlide key={index}>
-                                        <div className="flex items-center justify-center bg-white h-auto w-auto aspect-square rounded-[5px]">
-                                             <Image src={strapiUrl + el.url} alt="slide" width={459} height={481} className="w-full h-full object-contain" />
+                                        <div className="flex items-center justify-center bg-white h-auto w-auto aspect-square rounded-lg">
+                                             <Image src={strapiUrl + el.url} alt="slide" width={459} height={481} className="w-full h-full object-contain rounded-lg" />
                                         </div>
                                    </SwiperSlide>
                               ))}

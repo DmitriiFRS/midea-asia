@@ -22,7 +22,7 @@ const ProductDetails: React.FC<Props> = ({ locale, product, dollarValue }) => {
                     </h1>
                     {product.description && <p className="leading-130% text-[16px] tracking-tight lg:text-[18px]">{product.description}</p>}
                </div>
-               <div className="mt-[30px] flex flex-col items-center gap-5 lg:flex-row">
+               <div className="mt-[30px] flex flex-col items-center gap-5 lg:grid-cols-2 lg:grid">
                     {product.general_params.length > 0 &&
                          product.general_params.map((el) => {
                               return (
