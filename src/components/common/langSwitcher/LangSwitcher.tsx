@@ -56,7 +56,7 @@ const LangSwitcher: React.FC<Props> = ({ locale, inModal, inBurger }) => {
      };
      return (
           <div className="relative">
-               <button className="flex gap-2 border px-2 py-1 rounded-full" onClick={() => toggleDropdown()}>
+               <button className="flex gap-2 px-2 py-1 rounded-full" onClick={() => toggleDropdown()}>
                     <span className="text-[16px]">{currentLocale}</span>
                     <Image src={arrow} alt="arrow" width={16} height={16} className={`duration-300 ${isOpen ? "rotate-180" : ""}`} />
                </button>

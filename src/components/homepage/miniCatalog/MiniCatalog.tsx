@@ -4,6 +4,9 @@ import aircond from "@img/catalog/aircond.webp";
 import chillers from "@img/catalog/chillers.webp";
 import vrf from "@img/catalog/vrf.webp";
 import Image from "next/image";
+import cols from "@img/catalog/cols.webp";
+import cas from "@img/catalog/cas-cond.webp";
+import ducted from "@img/catalog/channels.webp";
 
 interface Props {
      locale: string;
@@ -20,21 +23,21 @@ const MiniCatalog: React.FC<Props> = ({ locale }) => {
           },
           {
                id: 1,
-               img: aircond,
+               img: cols,
                title: "Колонные кондиционеры",
                subtitle: "Кондиционеры для дома и офиса",
                href: `/${locale}/catalog/column-air-conditioners`,
           },
           {
                id: 2,
-               img: aircond,
+               img: cas,
                title: "Кассетные кондиционеры",
                subtitle: "Кондиционеры для дома и офиса",
                href: `/${locale}/catalog/cassette-air-conditioners`,
           },
           {
                id: 3,
-               img: aircond,
+               img: ducted,
                title: "Канальные кондиционеры",
                subtitle: "Кондиционеры для дома и офиса",
                href: `/${locale}/catalog/channel-air-conditioners`,

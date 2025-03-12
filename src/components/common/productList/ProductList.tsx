@@ -11,6 +11,7 @@ import { getProducts } from "@/fetch/getProducts";
 import { strapiUrl } from "@/utils/consts";
 import { Product } from "@/interfaces/products.interface";
 import { Pagination } from "@mui/material";
+import SkeletonList from "./SkeletonList";
 
 interface Props {
      locale: string;
@@ -46,7 +47,9 @@ const ProductList: React.FC<Props> = ({ locale, categorySlug, dollarValue }) => 
                setPage(pageValue);
           }
      }
-     return (
+     return isLoading ? (
+          <SkeletonList />
+     ) : (
           <>
                <div className="mt-10 grid items-stretch grid-cols-1 gap-x-5 gap-y-10 h-full pb-20 xs:grid-cols-2 lmd:grid-cols-3 xl:grid-cols-4">
                     <ProductListForm locale={locale} />

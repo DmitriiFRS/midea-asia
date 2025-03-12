@@ -1,4 +1,4 @@
-import industrial from "@/../public/images/home/alba.webp";
+import cols from "@/../public/images/catalog/cols.webp";
 import Container from "@/components/common/container/Container";
 import CatalogList from "@/components/common/catalogList/CatalogList";
 import { Catalog } from "@/interfaces/catalog.interface";
@@ -9,7 +9,10 @@ import channels from "@/../public/images/catalog/channels.webp";
 import chiller from "@/../public/images/catalog/chillers.webp";
 import fancoils from "@/../public/images/catalog/fancoils.webp";
 import vrf from "@/../public/images/catalog/vrf.webp";
-import curtain from "@/../public/images/catalog/curtain.webp";
+import curtain from "@/../public/images/catalog/heat-curtains.webp";
+import boiler from "@/../public/images/catalog/gas-boiler.webp";
+import recup from "@/../public/images/catalog/recups.webp";
+import dehumids from "@/../public/images/catalog/dehumids.webp";
 
 interface Props {
      params: Promise<{
@@ -52,7 +55,7 @@ const page: React.FC<Props> = async ({ params }) => {
                          id: 2,
                          title: "Колонные кондиционеры",
                          href: "/catalog/column-air-conditioners",
-                         image: industrial,
+                         image: cols,
                     },
                     {
                          id: 3,
@@ -70,13 +73,13 @@ const page: React.FC<Props> = async ({ params }) => {
                          id: 0,
                          title: "Газовые котлы",
                          href: "/catalog/gas-boilers",
-                         image: industrial,
+                         image: boiler,
                     },
                     {
                          id: 1,
                          title: "Рекуператоры",
                          href: "/catalog/recuperators",
-                         image: industrial,
+                         image: recup,
                     },
                     {
                          id: 2,
@@ -88,14 +91,14 @@ const page: React.FC<Props> = async ({ params }) => {
                          id: 3,
                          title: "Осушители",
                          href: "/catalog/dehumidifiers",
-                         image: industrial,
+                         image: dehumids,
                     },
-                    {
+                    /*{
                          id: 4,
                          title: "Кулеры для воды",
                          href: "/catalog/water-coolers",
-                         image: industrial,
-                    },
+                         image: coolers,
+                    },*/
                ],
           },
           {

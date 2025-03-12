@@ -10,10 +10,7 @@ const Guarantee: React.FC<Props> = ({ locale }) => {
      return (
           <section className="mt-[60px] md:mt-[100px]">
                <Container>
-                    <GuaranteeTitle locale={locale} />
-                    {/*<div className="mt-20">
-                         <GuaranteeMain locale={locale} />
-                    </div>*/}
+                    <div className="mt-20">{/*<GuaranteeMain locale={locale} />*/}</div>
                </Container>
           </section>
      );
