@@ -4,7 +4,7 @@ interface Props {
      locale: string;
 }
 
-const GuaranteeText: React.FC<Props> = ({ locale }) => {
+const GuaranteeTextSwiper: React.FC<Props> = ({ locale }) => {
      return (
           <div className="flex-[0_1_40%] my-[30px] flex flex-col">
                <h2 className="text-[36px] font-semibold leading-120%">МИССИЯ BIG PUFF & SOFA - СОЗДАВАТЬ ЗОНЫ КОМФОРТА И МЕСТА СИЛЫ</h2>
@@ -22,4 +22,4 @@ const GuaranteeText: React.FC<Props> = ({ locale }) => {
      );
 };
 
-export default GuaranteeText;
+export default GuaranteeTextSwiper;
