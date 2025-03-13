@@ -12,6 +12,7 @@ import { strapiUrl } from "@/utils/consts";
 import { Product } from "@/interfaces/products.interface";
 import { Pagination } from "@mui/material";
 import SkeletonList from "./SkeletonList";
+import { useProductCatalogContext } from "@/context/ProductCatalogContext";
 
 interface Props {
      locale: string;
@@ -27,21 +28,21 @@ export interface ProductsPagination {
 
 const ProductList: React.FC<Props> = ({ locale, categorySlug, dollarValue }) => {
      const [page, setPage] = useQueryState("page", parseAsInteger.withDefault(1));
-     const [brandValue, setBrandValue] = useQueryState("brand", parseAsString);
      const [products, setProducts] = useState<Product[]>([]);
      const [isLoading, setIsLoading] = useState(true);
      const [pageCount, setPageCount] = useState(1);
+     const { brand } = useProductCatalogContext();
      useEffect(() => {
           const getFilteredProducts = async function () {
                setIsLoading(true);
-               const response = await getProducts({ locale: locale, limit: 10, page: page, brandValue: brandValue, categoryValue: categorySlug });
+               const response = await getProducts({ locale: locale, limit: 10, page: page, brandValue: brand, categoryValue: categorySlug });
                const pagination = response.meta.pagination as ProductsPagination;
                setProducts(response.data);
                setPageCount(pagination.pageCount);
                setIsLoading(false);
           };
           getFilteredProducts();
-     }, [page]);
+     }, [page, brand]);
      function handlePageChange(pageValue: number, scroll = true) {
           if (page !== pageValue) {
                setPage(pageValue);
@@ -53,7 +54,7 @@ const ProductList: React.FC<Props> = ({ locale, categorySlug, dollarValue }) => 
           <>
                <div className="mt-10 grid items-stretch grid-cols-1 gap-x-5 gap-y-10 h-full pb-20 xs:grid-cols-2 lmd:grid-cols-3 xl:grid-cols-4">
                     <ProductListForm locale={locale} />
-                    {products.length &&
+                    {products.length ? (
                          products.map((el) => {
                               let price = null;
                               let priceFrom = null;
@@ -90,7 +91,10 @@ const ProductList: React.FC<Props> = ({ locale, categorySlug, dollarValue }) => 
                                         </div>
                                    </Link>
                               );
-                         })}
+                         })
+                    ) : (
+                         <div className="text-[16px] md:text-[20px] font-medium">Не найдено товаров с выбранными параметрами</div>
+                    )}
                </div>
                {pageCount > 1 && (
                     <Pagination

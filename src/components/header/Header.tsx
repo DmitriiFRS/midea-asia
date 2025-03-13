@@ -65,7 +65,7 @@ const Header: React.FC<Props> = ({ locale, nav }) => {
                <header className={`left-0 ${sticky ? "top-0" : "top-0 md:top-8"} w-full z-50 h-[80px] text-white ${sticky ? "fixed" : "absolute"}`}>
                     <div className="bg-black opacity-25 w-full h-full absolute left-0 top-0 -z-10"></div>
                     <Container className="h-full flex justify-between items-center">
-                         <nav className="hidden md:block">
+                         <nav className="hidden md:block font-semibold">
                               <ul className="flex gap-6 lg:gap-8">
                                    {leftNav.map((el) => (
                                         <li key={el.id} className="relative z-10">
@@ -85,7 +85,7 @@ const Header: React.FC<Props> = ({ locale, nav }) => {
                          <Link className="aspect-[300/100] max-w-[120px] w-full h-auto md:max-w-[200px]" href={`/${locale}`}>
                               <Image src={logo} alt="Midea" width={300} height={100} className="w-full h-full object-contain" />
                          </Link>
-                         <div className="gap-10 items-center lg:gap-[120px] hidden md:flex">
+                         <nav className="gap-10 items-center lg:gap-[120px] hidden md:flex font-semibold">
                               <ul className="flex gap-6 lg:gap-8">
                                    {rightNav.map((el) => (
                                         <li key={el.id} className="relative z-10">
@@ -101,7 +101,7 @@ const Header: React.FC<Props> = ({ locale, nav }) => {
                                         </li>
                                    ))}
                               </ul>
-                         </div>
+                         </nav>
                          <Burger locale={locale} nav={nav} />
                     </Container>
                </header>

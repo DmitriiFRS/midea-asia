@@ -23,6 +23,7 @@ interface FilterInterface {
 
 export async function getProducts({ locale, limit = 100, page = 1, brandValue, categoryValue }: Props) {
      const filters: FilterInterface = {};
+     console.log("brandValue", brandValue);
      if (brandValue) {
           filters.brand = {
                slug: {
