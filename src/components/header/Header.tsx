@@ -2,7 +2,7 @@
 
 import Container from "../common/container/Container";
 import Image from "next/image";
-import logo from "@icons/common/ca-logo.webp";
+import logo from "@icons/common/ca-logo-white.webp";
 import Link from "next/link";
 import LangSwitcher from "../common/langSwitcher/LangSwitcher";
 import { useEffect, useState } from "react";
@@ -39,8 +39,8 @@ const Header: React.FC<Props> = ({ locale, nav }) => {
           isSticky();
      }, []);
 
-     const leftNav = nav.slice(0, 1);
-     const rightNav = nav.slice(1, 2);
+     const leftNav = nav.slice(0, 2);
+     const rightNav = nav.slice(2, 3);
      return (
           <>
                <div className="bg-black w-full min-h-8 text-white hidden md:block">
@@ -63,7 +63,7 @@ const Header: React.FC<Props> = ({ locale, nav }) => {
                     </Container>
                </div>
                <header className={`left-0 ${sticky ? "top-0" : "top-0 md:top-8"} w-full z-50 h-[80px] text-white ${sticky ? "fixed" : "absolute"}`}>
-                    <div className="bg-black opacity-25 w-full h-full absolute left-0 top-0 -z-10"></div>
+                    <div className="bg-black opacity-50 w-full h-full absolute left-0 top-0 -z-10"></div>
                     <Container className="h-full flex justify-between items-center">
                          <nav className="hidden md:block font-semibold">
                               <ul className="flex gap-6 lg:gap-8">

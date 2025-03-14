@@ -15,15 +15,19 @@ type TBreadCrumbProps = {
      className?: string;
      categoryData?: {
           slug: string;
-          title: string;
+          name: string;
      };
      productData?: {
+          slug: string;
+          name: string;
+     };
+     newsData?: {
           slug: string;
           title: string;
      };
 };
 
-const NextBreadcrumb = ({ categoryData, productData, homeElement, separator, className, listClasses, capitalizeLinks }: TBreadCrumbProps) => {
+const NextBreadcrumb = ({ categoryData, productData, newsData, homeElement, separator, className, listClasses, capitalizeLinks }: TBreadCrumbProps) => {
      const locale = useLocale();
      const pathname = usePathname();
      const paths = usePathname();
@@ -37,7 +41,7 @@ const NextBreadcrumb = ({ categoryData, productData, homeElement, separator, cla
      });
      return (
           <div>
-               <ul className={`flex ${className} gap-[3px] text-[#9ea0a6] font-medium leading-120 tracking-0.02 text-14`}>
+               <ul className={`flex ${className} gap-[3px] text-[#9ea0a6] font-medium leading-120 tracking-0.02 text-14 flex-wrap`}>
                     <li className={listClasses}>
                          <Link href={"/"}>{homeElement}</Link>
                     </li>
@@ -50,11 +54,53 @@ const NextBreadcrumb = ({ categoryData, productData, homeElement, separator, cla
                               case itemLink === "catalog":
                                    itemLink = "Каталог";
                                    break;
+                              case itemLink === "chillers":
+                                   itemLink = "Чиллеры";
+                                   break;
+                              case itemLink === "vrf":
+                                   itemLink = "VRF-системы";
+                                   break;
+                              case itemLink === "fancoils":
+                                   itemLink = "Фанкойлы";
+                                   break;
+                              case itemLink === "air-conditioners":
+                                   itemLink = "Бытовые кондиционеры";
+                                   break;
+                              case itemLink === "heat-curtains":
+                                   itemLink = "Тепловые завесы";
+                                   break;
+                              case itemLink === "cassette-air-conditioners":
+                                   itemLink = "Кассетные кондиционеры";
+                                   break;
+                              case itemLink === "ducted-air-conditioners":
+                                   itemLink = "Канальные кондиционеры";
+                                   break;
+                              case itemLink === "column-air-conditioners":
+                                   itemLink = "Колонные кондиционеры";
+                                   break;
+                              case itemLink === "gas-boilers":
+                                   itemLink = "Газовые котлы";
+                                   break;
+                              case itemLink === "recuperators":
+                                   itemLink = "Рекуператоры";
+                                   break;
+                              case itemLink === "air-purifiers-humidifiers":
+                                   itemLink = "Очистители-увлажнители воздуха";
+                                   break;
+                              case itemLink === "dehumidifiers":
+                                   itemLink = "Осушители воздуха";
+                                   break;
+                              case itemLink === "news":
+                                   itemLink = "Новости и статьи";
+                                   break;
                               case categoryData?.slug === link:
-                                   itemLink = categoryData?.title;
+                                   itemLink = categoryData?.name;
                                    break;
                               case productData?.slug === link:
-                                   itemLink = productData?.title;
+                                   itemLink = productData?.name;
+                                   break;
+                              case newsData?.slug === link:
+                                   itemLink = newsData?.title;
                                    break;
                          }
                          return (

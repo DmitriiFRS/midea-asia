@@ -28,7 +28,7 @@ const page: React.FC<Props> = async ({ params }) => {
                     <section className="section-margin pb-[120px]">
                          <Container>
                               <div>
-                                   <NextBreadcrumb homeElement="Главная" separator="/" />
+                                   <NextBreadcrumb homeElement="Главная" separator="/" newsData={newsData.data} />
                                    <h1 className="mt-5 text-[32px] md:text-[40px] font-medium">Новости и статьи</h1>
                                    <NewsPageContent news={newsData.data} />
                               </div>

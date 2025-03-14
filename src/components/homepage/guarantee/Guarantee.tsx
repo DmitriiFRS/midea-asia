@@ -1,5 +1,4 @@
 import Container from "@/components/common/container/Container";
-import GuaranteeTitle from "./GuaranteeTitle";
 import GuaranteeMain from "./GuaranteeMain";
 import { strapiApiUrl } from "@/utils/consts";
 import { strapiGet } from "@/fetch/strapiGet";
@@ -14,7 +13,8 @@ const Guarantee: React.FC<Props> = async ({ locale }) => {
           news.data && (
                <section className="mt-[100px]">
                     <Container>
-                         <div>
+                         <h2 className="text-[32px] font-semibold">Новости и статьи</h2>
+                         <div className="mt-10">
                               <GuaranteeMain locale={locale} news={news.data} />
                          </div>
                     </Container>

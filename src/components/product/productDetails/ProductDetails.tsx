@@ -15,7 +15,7 @@ interface Props {
 const ProductDetails: React.FC<Props> = ({ locale, product, dollarValue }) => {
      return (
           <div className="">
-               <NextBreadcrumb homeElement="Главная" separator="/" />
+               <NextBreadcrumb homeElement="Главная" separator="/" productData={product} />
                <div className="mt-5 flex flex-col gap-5 lg:gap-8">
                     <h1 className="text-[24px] font-semibold leading-120% lg:text-[35px]">
                          {product.name} {product.brand.title}
@@ -26,8 +26,8 @@ const ProductDetails: React.FC<Props> = ({ locale, product, dollarValue }) => {
                     {product.general_params.length > 0 &&
                          product.general_params.map((el) => {
                               return (
-                                   <div key={el.id} className="flex items-center w-full gap-2 bg-white h-[80px] px-2.5 rounded-xl xl:px-10">
-                                        <Image src={strapiUrl + el.icon.url} alt="icon" width={80} height={80} />
+                                   <div key={el.id} className="flex items-center w-full gap-2 bg-white h-[80px] px-2.5 rounded-xl">
+                                        <Image src={strapiUrl + el.icon.url} alt="icon" width={80} height={80} className="h-[90%] w-auto aspect-square object-contain" />
                                         <p className="leading-130% text-[16px] font-medium">{el.title}</p>
                                    </div>
                               );

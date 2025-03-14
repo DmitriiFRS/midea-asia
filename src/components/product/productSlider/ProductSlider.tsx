@@ -30,7 +30,7 @@ const ProductSlider = ({ images }: Props) => {
                          >
                               {images.map((el, index) => (
                                    <SwiperSlide key={index}>
-                                        <div className="flex items-center justify-center w-full h-auto aspect-square relative">
+                                        <div className="flex items-center justify-center w-full h-auto aspect-square relative bg-white rounded-lg">
                                              <Image src={strapiUrl + el.url} alt="slide" width={459} height={481} className=" w-full h-full object-contain rounded-lg" />
                                         </div>
                                    </SwiperSlide>
