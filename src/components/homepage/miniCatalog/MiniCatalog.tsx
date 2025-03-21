@@ -7,6 +7,7 @@ import Image from "next/image";
 import cols from "@img/catalog/cols.webp";
 import cas from "@img/catalog/cas-cond.webp";
 import ducted from "@img/catalog/channels.webp";
+import Link from "next/link";
 
 interface Props {
      locale: string;
@@ -19,7 +20,7 @@ const MiniCatalog: React.FC<Props> = ({ locale }) => {
                img: aircond,
                title: "Бытовые кондиционеры",
                subtitle: "Кондиционеры для дома и офиса",
-               href: `/${locale}/catalog/airconds`,
+               href: `/${locale}/catalog/air-conditioners`,
           },
           {
                id: 1,
@@ -64,17 +65,23 @@ const MiniCatalog: React.FC<Props> = ({ locale }) => {
                     <div className="grid gap-x-5 gap-y-5 grid-cols-1 md:grid-cols-2 mt-10">
                          {cards.map((el) => {
                               return (
-                                   <div key={el.id} className="relative w-full h-full aspect-[785/466] rounded-md overflow-hidden">
-                                        <Image src={el.img} alt={el.title} width={800} height={500} className="absolute left-0 top-0 w-full h-full object-cover" />
+                                   <Link href={el.href} key={el.id} className="relative w-full h-full aspect-[785/466] rounded-md overflow-hidden group">
+                                        <Image
+                                             src={el.img}
+                                             alt={el.title}
+                                             width={800}
+                                             height={500}
+                                             className="absolute left-0 top-0 w-full h-full object-cover duration-700 group-hover:scale-110"
+                                        />
                                         <div className="absolute left-0 top-0 w-full h-full bg-black opacity-40"></div>
                                         <div className="w-full h-full relative z-10 flex flex-col gap-5 justify-end p-[10px] text-white sm:p-5">
                                              <h3 className="text-[24px] font-medium lg:text-[28px]">{el.title}</h3>
                                              <p className="font-medium">{el.subtitle}</p>
-                                             <CommonButton href={el.href} className=" max-w-[200px] font-semibold h-10 lg:h-[50px]">
+                                             <CommonButton className=" max-w-[200px] font-semibold h-10 duration-300 lg:h-[50px] group-hover:bg-white group-hover:text-black">
                                                   Подробнее
                                              </CommonButton>
                                         </div>
-                                   </div>
+                                   </Link>
                               );
                          })}
                     </div>

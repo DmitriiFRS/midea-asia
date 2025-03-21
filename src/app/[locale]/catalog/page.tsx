@@ -1,18 +1,18 @@
-import cols from "@/../public/images/catalog/cols.webp";
+import cols from "@/../public/images/catalog/cols-catalog.webp";
 import Container from "@/components/common/container/Container";
 import CatalogList from "@/components/common/catalogList/CatalogList";
 import { Catalog } from "@/interfaces/catalog.interface";
-import aircond from "@/../public/images/catalog/aircond.webp";
+import aircond from "@/../public/images/catalog/aircond-catalog.webp";
 import airpur from "@/../public/images/catalog/air-purifiers-humidifiers.webp";
-import cascond from "@/../public/images/catalog/cas-cond.webp";
-import channels from "@/../public/images/catalog/channels.webp";
-import chiller from "@/../public/images/catalog/chillers.webp";
-import fancoils from "@/../public/images/catalog/fancoils.webp";
-import vrf from "@/../public/images/catalog/vrf.webp";
-import curtain from "@/../public/images/catalog/heat-curtains.webp";
-import boiler from "@/../public/images/catalog/gas-boiler.webp";
-import recup from "@/../public/images/catalog/recups.webp";
-import dehumids from "@/../public/images/catalog/dehumids.webp";
+import cascond from "@/../public/images/catalog/cas-cond-catalog.webp";
+import channels from "@/../public/images/catalog/channels-catalog.webp";
+import chiller from "@/../public/images/catalog/chillers-catalog.webp";
+import fancoils from "@/../public/images/catalog/fancoils-catalog.webp";
+import vrf from "@/../public/images/catalog/vrf-catalog.webp";
+import curtain from "@/../public/images/catalog/heat-curtains-catalog.webp";
+import boiler from "@/../public/images/catalog/gas-boiler-catalog.webp";
+import recup from "@/../public/images/catalog/recups-catalog.webp";
+import dehumids from "@/../public/images/catalog/dehumids-catalog.webp";
 
 interface Props {
      params: Promise<{

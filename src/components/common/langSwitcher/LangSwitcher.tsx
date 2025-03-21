@@ -67,6 +67,7 @@ const LangSwitcher: React.FC<Props> = ({ locale, inModal, inBurger }) => {
                     localesArray={localesArray}
                     locales={locales}
                     toggleDropdown={toggleDropdown}
+                    inBurger={inBurger}
                />
                {isOpen && <div onClick={() => toggleDropdown()} className="fixed left-0 top-0 z-[60] w-screen h-screen cursor-auto"></div>}
           </div>

@@ -8,11 +8,11 @@ interface Props {
 
 const BrandDescriptionTop: React.FC<Props> = ({ locale }) => {
      return (
-          <div className="bg-[#1F94D2] py-10 md:py-20">
-               <Container className="flex flex-col items-center">
+          <div className="bg-[#1F94D2] py-10 md:py-16">
+               <Container className="flex flex-col items-center text-white">
                     <Image src={logo} alt="Midea" width={300} height={100} className="w-full max-w-[300px] h-auto aspect-[4/1]" />
                     <h2 className="mt-10 font-semibold text-[18px] text-center leading-130%">Midea & Welkin: всё для идеального климата и комфорта</h2>
-                    <div className="mt-[30px] leading-120% text-[14px] text-center flex flex-col gap-5 max-w-[700px] font-light">
+                    <div className="mt-[20px] leading-120% text-[16px] text-center flex flex-col gap-5 max-w-[700px] font-light text-gray-200">
                          <p>
                               Откройте для себя широкий выбор бытовых и промышленных кондиционеров Midea, а также другое современное оборудование для поддержания оптимального
                               микроклимата в любом помещении.

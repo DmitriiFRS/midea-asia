@@ -46,7 +46,7 @@ const ProductFormButtom = () => {
 
                <button
                     onClick={() => setIsOpen(true)}
-                    className="mt-5 rounded-2xl text-white bg-black text-[20px] border border-black flex items-center justify-center p-[19px] text-center w-full duration-300 hover:bg-transparent hover:text-black md:p-5 lg:text-[24px] lg:mt-10"
+                    className="mt-5 rounded-2xl text-white bg-black text-[20px] border border-black flex items-center justify-center p-[12px] text-center w-full duration-300 hover:bg-transparent hover:text-black md:p-5 lg:text-[24px] lg:mt-10"
                >
                     Оставить заявку
                </button>

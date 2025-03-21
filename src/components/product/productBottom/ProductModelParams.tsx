@@ -260,6 +260,128 @@ const ProductModelParams: React.FC<Props> = ({ locale }) => {
                title: "Класс энергоэффективности сезонного отопления помещений (ТВВых при 35°С)",
                value: currentModel.params?.chillers?.e_eff_class_35,
           },
+          //
+
+          {
+               title: "Тип",
+               value: currentModel.params?.vrf_outer?.type,
+          },
+          {
+               title: "Тип мотора вентилятора",
+               value: currentModel.params?.vrf_outer?.fan_motor_type,
+          },
+          {
+               title: "Холопроизводительность kW",
+               value: currentModel.params?.vrf_outer?.cooling_kw,
+          },
+          {
+               title: "Теплопроизводительность kW",
+               value: currentModel.params?.vrf_outer?.heating_kw,
+          },
+          {
+               title: "Электропитание, В/Гц/Ф",
+               value: currentModel.params?.vrf_outer?.powerSupply,
+          },
+          {
+               title: "ESP (статическое давление), Па",
+               value: currentModel.params?.vrf_outer?.esp,
+          },
+          {
+               title: "Номинальная потребляемая мощность (охлаждение), кВт",
+               value: currentModel.params?.vrf_outer?.cooling_power_cons_nom,
+          },
+          {
+               title: "Коэффициент энергоэффективности EER",
+               value: currentModel.params?.vrf_outer?.eer,
+          },
+          {
+               title: "Номинальная потребляемая мощность (нагрев), кВт",
+               value: currentModel.params?.vrf_outer?.heating_power_cons_nom,
+          },
+          {
+               title: "Коэффициент энергоэффективности COP",
+               value: currentModel.params?.vrf_outer?.cop,
+          },
+          {
+               title: "Максимальный потребляемый ток, А",
+               value: currentModel.params?.vrf_outer?.max_energy_cons_a,
+          },
+          {
+               title: "Рекомендуемый автомат, А",
+               value: currentModel.params?.vrf_outer?.automat_a,
+          },
+          {
+               title: "Расход воздуха, м³/ч",
+               value: currentModel.params?.vrf_outer?.airflow,
+          },
+          {
+               title: "Уровень звукового давления, дБ(А)",
+               value: currentModel.params?.vrf_outer?.sound_pressure_level,
+          },
+          {
+               title: "Уровень шума, дБ(A)",
+               value: currentModel.params?.vrf_outer?.noise,
+          },
+          {
+               title: "Тип компрессора",
+               value: currentModel.params?.vrf_outer?.compressor_type,
+          },
+          {
+               title: "Бренд компрессора",
+               value: currentModel.params?.vrf_outer?.compressor_brand,
+          },
+          {
+               title: "Количество компрессоров",
+               value: currentModel.params?.vrf_outer?.compressor_quantity,
+          },
+          {
+               title: "Количество вентиляторов",
+               value: currentModel.params?.vrf_outer?.fan_quantity,
+          },
+          {
+               title: "Тип хладагента",
+               value: currentModel.params?.vrf_outer?.freon_type,
+          },
+          {
+               title: "Заводская заправка хладагента, кг",
+               value: currentModel.params?.vrf_outer?.freon_value,
+          },
+          {
+               title: "Диаметр жидкостной трубы, мм (дюйм)",
+               value: currentModel.params?.vrf_outer?.liquid_pipe_diam,
+          },
+          {
+               title: "Диаметр газовой трубы, мм (дюйм)",
+               value: currentModel.params?.vrf_outer?.gas_pipe_diam,
+          },
+          {
+               title: "Рабочий диапазон наружных температур при охлаждении, °C",
+               value: currentModel.params?.vrf_outer?.temp_cooling,
+          },
+          {
+               title: "Рабочий диапазон наружных температур при нагреве, °C",
+               value: currentModel.params?.vrf_outer?.temp_heating,
+          },
+          {
+               title: "Размер (Ш×В×Г), мм",
+               value: currentModel.params?.vrf_outer?.sizes,
+          },
+          {
+               title: "Размер в упаковке (Ш×В×Г), мм",
+               value: currentModel.params?.vrf_outer?.package_sizes,
+          },
+          {
+               title: "Вес (нетто/брутто), кг",
+               value: currentModel.params?.vrf_outer?.weight,
+          },
+          {
+               title: "Максимальное количество подключаемых внутренних блоков",
+               value: currentModel.params?.vrf_outer?.max_blocks,
+          },
+          {
+               title: "Суммарная мощность подключаемых внутренних блоков, %",
+               value: currentModel.params?.vrf_outer?.inner_blocks_power,
+          },
      ];
      return (
           <ul className="grid grid-cols-1 justify-between mt-5 gap-5 md:gap-10 xs:grid-cols-2 md:mt-10 md:grid-cols-3 lg:grid-cols-4" id="productParams">

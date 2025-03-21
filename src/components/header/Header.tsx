@@ -7,8 +7,8 @@ import Link from "next/link";
 import LangSwitcher from "../common/langSwitcher/LangSwitcher";
 import { useEffect, useState } from "react";
 import Burger from "./Burger";
-import pin from "@icons/common/pin-white.svg";
-import phone from "@icons/common/phone.svg";
+import pin from "@icons/common/phone.svg";
+import phone from "@icons/common/pin-white.svg";
 
 interface Props {
      locale: string;

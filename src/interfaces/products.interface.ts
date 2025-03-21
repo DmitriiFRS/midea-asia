@@ -43,7 +43,7 @@ export interface VariationInterface {
           id: number;
           airconds: AircondsParamsInterface | null;
           chillers: ChillersParamsInterface | null;
-          vrf_outer: null;
+          vrf_outer: VrfOuterParamsInterface;
           vrf_inner: null;
      };
 }
@@ -113,4 +113,36 @@ export interface ChillersParamsInterface {
      remote: string | null;
      water_flow_range: string | null;
      e_eff_class_35: string | null;
+}
+export interface VrfOuterParamsInterface {
+     type: string | null;
+     fan_motor_type: string | null;
+     cooling_kw: string | null;
+     heating_kw: string | null;
+     powerSupply: string | null;
+     esp: string | null;
+     cooling_power_cons_nom: string | null;
+     eer: string | null;
+     heating_power_cons_nom: string | null;
+     cop: string | null;
+     max_energy_cons_a: string | null;
+     automat_a: string | null;
+     airflow: string | null;
+     sound_pressure_level: string | null;
+     noise: string | null;
+     compressor_type: string | null;
+     compressor_brand: string | null;
+     compressor_quantity: string | null;
+     fan_quantity: string | null;
+     freon_type: string | null;
+     freon_value: string | null;
+     liquid_pipe_diam: string | null;
+     gas_pipe_diam: string | null;
+     temp_cooling: string | null;
+     temp_heating: string | null;
+     sizes: string | null;
+     package_sizes: string | null;
+     weight: string | null;
+     max_blocks: string | null;
+     inner_blocks_power: string | null;
 }

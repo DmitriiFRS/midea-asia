@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import logoBlack from "@img/common/midea-black.webp";
+import logoBlack from "@icons/common/ca-logo.webp";
 import close from "@icons/common/close.svg";
 import LangSwitcher from "../common/langSwitcher/LangSwitcher";
 import Link from "next/link";
@@ -55,11 +55,11 @@ const Burger: React.FC<Props> = ({ locale, nav }) => {
                                    animate={{ x: 0 }}
                                    exit={{ x: 1000 }}
                                    transition={{ duration: 0.5 }}
-                                   className="bg-[#E7F1FA] px-4 relative z-10 w-[70vw] h-full flex flex-col justify-between text-black"
+                                   className="bg-[#E7F1FA] px-4 relative z-10 w-[70vw] h-full flex flex-col justify-between text-black border"
                                    onClick={(e) => e.stopPropagation()}
                               >
                                    <div className="flex justify-between mt-5">
-                                        <Image src={logoBlack} alt="Midea" width={120} height={40} className="max-w-[120px] w-full h-auto aspect-[1080/433]" />
+                                        <Image src={logoBlack} alt="Midea" width={120} height={40} className="max-w-[120px] w-full h-auto aspect-[1080/433] object-contain" />
                                         <button className="p-2.5" onClick={() => setIsOpen(false)}>
                                              <Image src={close} alt="close" width={20} height={20} className="" />
                                         </button>
@@ -81,7 +81,7 @@ const Burger: React.FC<Props> = ({ locale, nav }) => {
                                              ))}
                                         </ul>
                                    </nav>
-                                   <div className="flex justify-center mb-[100px]">
+                                   <div className="flex justify-center mb-[120px]">
                                         <LangSwitcher locale={locale} inBurger />
                                    </div>
                               </motion.div>

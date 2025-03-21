@@ -7,12 +7,13 @@ interface Props {
      localesArray: string[];
      locales: Record<string, string>;
      toggleDropdown: (currentLng?: string) => void;
+     inBurger?: boolean;
 }
 
-const LangDropdown: React.FC<Props> = ({ locale, locales, isOpen, redirectedPathName, localesArray, toggleDropdown }) => {
+const LangDropdown: React.FC<Props> = ({ locale, locales, isOpen, redirectedPathName, localesArray, toggleDropdown, inBurger }) => {
      return (
           <div
-               className={`z-[70] text-[16px] absolute -left-2 top-6 w-full h-auto flex ml-2 flex-col gap-4 p-4 duration-300 bg-white rounded-lg ${
+               className={`z-[70] text-[16px] absolute -left-2 ${inBurger ? "-top-28" : "top-6"} w-full h-auto flex ml-2 flex-col gap-4 p-4 duration-300 bg-white rounded-lg ${
                     isOpen ? "translate-y-4 visible opacity-100" : "translate-y-0 invisible opacity-0"
                }`}
           >
