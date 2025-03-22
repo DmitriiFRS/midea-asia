@@ -11,7 +11,7 @@ import { NextIntlClientProvider } from "next-intl";
 import NextTopLoader from "nextjs-toploader";
 
 export const metadata: Metadata = {
-     title: "Midea",
+     title: "Climate Academy",
      description: "Description",
 };
 
