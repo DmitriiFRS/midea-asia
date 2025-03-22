@@ -409,7 +409,7 @@ const ProductModelParams: React.FC<Props> = ({ locale }) => {
                value: currentModel.params?.heat_curtains?.size,
           },
      ];
-     return (
+     return currentModel.variation && (
           <ul className="grid grid-cols-1 justify-between mt-5 gap-5 md:gap-10 xs:grid-cols-2 md:mt-10 md:grid-cols-3 lg:grid-cols-4" id="productParams">
                {params.map((el, index) => {
                     if (!el.value) return null;

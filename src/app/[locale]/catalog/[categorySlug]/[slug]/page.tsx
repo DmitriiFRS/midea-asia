@@ -29,7 +29,7 @@ const page: React.FC<Props> = async ({ params }) => {
                                         <ProductDetails locale={locale} product={data} dollarValue={dollarValue.data.value} />
                                    </div>
                                    <div>
-                                        <ProductBottom locale={locale} productDescription={data.mainDescription} productVariations={data.variation} />
+                                        <ProductBottom locale={locale} productDescription={data.mainDescription} productVariations={data.variation} productParams={data.params_other} />
                                    </div>
                               </Container>
                          </ProductContextProvider>

@@ -22,7 +22,7 @@ export interface Product {
                url: string;
           };
      }[];
-     params_other: ParamsOtherInterface[];
+     params_other: ParamsOtherInterface;
 }
 export interface BrandInterface {
      id: number;
@@ -52,9 +52,9 @@ export interface VariationInterface {
 
 export interface ParamsOtherInterface {
      id: number
-     humids: null;
-     dehumids: null;
-     boilers: null;
+     humids: HumidsParamsInterface;
+     dehumids: DehumidsParamsInterface;
+     boilers: BoilersParamsInterface;
 }
 
 export interface AircondsParamsInterface {
@@ -162,4 +162,64 @@ export interface HeatCurtainsParamsInterface {
      temp_output: string | null;
      consumption: string | null;
      size: string | null;
+}
+export interface BoilersParamsInterface {
+     heating_source: string | null;
+     gas_pressure: string | null;
+     performance: string | null;
+     kpd: string | null;
+     temp_range_heating: string | null;
+     temp_range_heating_heatWater: string | null;
+     working_pressure: string | null;
+     nominal_voltage: string | null;
+     max_heat_output: string | null;
+     pipe_diameter_heating: string | null;
+     pipe_diameter_heat_water: string | null;
+     pipe_diameter: string | null;
+     size: string | null;
+     expansion_tank_vol: string | null;
+     pump_brand: string | null;
+     gas_valve_brand: string | null;
+     heat_water_25: string | null;
+     heat_water_30: string | null;
+     max_min_gas_pressure: string | null;
+     oxygen_supply: string | null;
+     gas_flowrate: string | null;
+     combustion_chamber: string | null;
+}
+export interface HumidsParamsInterface {
+     nominal_power: string | null;
+     nominal_frequency: string | null;
+     rated_power: string | null;
+     noise_min: string | null;
+     anions: string | null;
+     particle_removal: string | null;
+     formaldehyde: string | null;
+     m2: string | null;
+     filter_replacement: string | null;
+     weight: string | null;
+     size: string | null;
+     tank_capacity: string | null;
+     max_spray_vol: string | null;
+     cable_length: string | null;
+     engine_speed: string | null;
+     airflow: string | null;
+     degree_oscil: string | null;
+}
+export interface DehumidsParamsInterface {
+     power_supply: string | null;
+     consumption: string | null;
+     nominal_power: string | null;
+     capacity: string | null;
+     circ_air_flow: string | null;
+     freon: string | null;
+     size: string | null;
+     weight: string | null;
+     m2: string | null;
+     performance: string | null;
+     input_nominal_power: string | null;
+     compressor: string | null;
+     air_filter: string | null;
+     working_temp: string | null;
+     drenage: string | null;
 }
