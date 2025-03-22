@@ -382,6 +382,32 @@ const ProductModelParams: React.FC<Props> = ({ locale }) => {
                title: "Суммарная мощность подключаемых внутренних блоков, %",
                value: currentModel.params?.vrf_outer?.inner_blocks_power,
           },
+          //
+
+          {
+               title: "Источник электропитания",
+               value: currentModel.params?.heat_curtains?.power_supply,
+          },
+          {
+               title: "Расход воздуха (m3/h)",
+               value: currentModel.params?.heat_curtains?.airflow,
+          },
+          {
+               title: "Скорость воздуха (m/s)",
+               value: currentModel.params?.heat_curtains?.air_velocity,
+          },
+          {
+               title: "Температура на выходе, °C max",
+               value: currentModel.params?.heat_curtains?.temp_output,
+          },
+          {
+               title: "Потребление кВт/ч",
+               value: currentModel.params?.heat_curtains?.consumption,
+          },
+          {
+               title: "Размер (Ш.В.Г), мм",
+               value: currentModel.params?.heat_curtains?.size,
+          },
      ];
      return (
           <ul className="grid grid-cols-1 justify-between mt-5 gap-5 md:gap-10 xs:grid-cols-2 md:mt-10 md:grid-cols-3 lg:grid-cols-4" id="productParams">

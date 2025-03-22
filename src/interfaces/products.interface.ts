@@ -22,6 +22,7 @@ export interface Product {
                url: string;
           };
      }[];
+     params_other: ParamsOtherInterface[];
 }
 export interface BrandInterface {
      id: number;
@@ -45,7 +46,15 @@ export interface VariationInterface {
           chillers: ChillersParamsInterface | null;
           vrf_outer: VrfOuterParamsInterface;
           vrf_inner: null;
+          heat_curtains: HeatCurtainsParamsInterface;
      };
+}
+
+export interface ParamsOtherInterface {
+     id: number
+     humids: null;
+     dehumids: null;
+     boilers: null;
 }
 
 export interface AircondsParamsInterface {
@@ -145,4 +154,12 @@ export interface VrfOuterParamsInterface {
      weight: string | null;
      max_blocks: string | null;
      inner_blocks_power: string | null;
+}
+export interface HeatCurtainsParamsInterface {
+     power_supply: string | null;
+     airflow: string | null;
+     air_velocity: string | null;
+     temp_output: string | null;
+     consumption: string | null;
+     size: string | null;
 }
