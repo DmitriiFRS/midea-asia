@@ -23,6 +23,17 @@ export interface Product {
           };
      }[];
      params_other: ParamsOtherInterface;
+     video: {
+          url: string;
+     };
+     img_description: ImageDescriptionInterface[];
+}
+export interface ImageDescriptionInterface {
+     id: number;
+     text: string;
+     image: {
+          url: string;
+     };
 }
 export interface BrandInterface {
      id: number;
@@ -47,11 +58,12 @@ export interface VariationInterface {
           vrf_outer: VrfOuterParamsInterface;
           vrf_inner: null;
           heat_curtains: HeatCurtainsParamsInterface;
+          centrifugal_chillers: CentrifugalChillersParamsInterface;
      };
 }
 
 export interface ParamsOtherInterface {
-     id: number
+     id: number;
      humids: HumidsParamsInterface;
      dehumids: DehumidsParamsInterface;
      boilers: BoilersParamsInterface;
@@ -162,6 +174,43 @@ export interface HeatCurtainsParamsInterface {
      temp_output: string | null;
      consumption: string | null;
      size: string | null;
+}
+export interface CentrifugalChillersParamsInterface {
+     cooling_kw: string | null;
+     heating_kw: string | null;
+     powerSupply: string | null;
+     cooling_power_cons_nom: string | null;
+     heating_power_cons_nom: string | null;
+     eer: string | null;
+     cop: string | null;
+     iplv: string | null;
+     engine_power_kw: string | null;
+     nominal_voltage_a: string | null;
+     inrush_current_a: string | null;
+     max_voltage_a: string | null;
+     max_cons_voltage_a: string | null;
+     hpe_type: string | null;
+     hpe_pipe_diameter_mm: string | null;
+     cooling_hpe_res: string | null;
+     cooling_hpe_water_cons: string | null;
+     heating_hpe_res: string | null;
+     heating_hpe_water_cons: string | null;
+     hp_htc_pipe_diam: string | null;
+     cooling_hpc_res: string | null;
+     cooling_hpc_water_cons: string | null;
+     heating_hpc_res: string | null;
+     heating_hpc_water_cons: string | null;
+     compressor_type: string | null;
+     noise: string | null;
+     freon_type: string | null;
+     freon_value: string | null;
+     size: string | null;
+     weight: string | null;
+     operating_weight: string | null;
+     weight_rhwe_ha: string | null;
+     weight_rhwe_hab: string | null;
+     oper_weight_rhwe_ha: string | null;
+     oper_weight_rhwe_hab: string | null;
 }
 export interface BoilersParamsInterface {
      heating_source: string | null;

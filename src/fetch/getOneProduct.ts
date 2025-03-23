@@ -6,7 +6,7 @@ export async function getOneProduct({ locale, slug }: { locale: string; slug: st
                next: {
                     revalidate: 0,
                },
-               cache: "no-cache",
+               cache: "no-store",
           });
           return response.json();
      } catch (err) {

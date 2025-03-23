@@ -408,19 +408,163 @@ const ProductModelParams: React.FC<Props> = ({ locale }) => {
                title: "Размер (Ш.В.Г), мм",
                value: currentModel.params?.heat_curtains?.size,
           },
+
+          //
+          {
+               title: "Холодопроизводительность, кВт",
+               value: currentModel.params?.centrifugal_chillers?.cooling_kw,
+          },
+          {
+               title: "Теплопроизводительность, кВт",
+               value: currentModel.params?.centrifugal_chillers?.heating_kw,
+          },
+          {
+               title: "Электропитание, В/Гц/Ф",
+               value: currentModel.params?.centrifugal_chillers?.powerSupply,
+          },
+          {
+               title: "Номинальная потребляемая мощность (охлаждение), кВт",
+               value: currentModel.params?.centrifugal_chillers?.cooling_power_cons_nom,
+          },
+          {
+               title: "Номинальная потребляемая мощность (нагрев), кВт",
+               value: currentModel.params?.centrifugal_chillers?.heating_power_cons_nom,
+          },
+          {
+               title: "Коэффициент энергоэффективности EER",
+               value: currentModel.params?.centrifugal_chillers?.eer,
+          },
+          {
+               title: "COP, Вт/Вт",
+               value: currentModel.params?.centrifugal_chillers?.cop,
+          },
+          {
+               title: "IPLV, Вт/Вт",
+               value: currentModel.params?.centrifugal_chillers?.iplv,
+          },
+          {
+               title: "Мощность двигателя Кв.",
+               value: currentModel.params?.centrifugal_chillers?.engine_power_kw,
+          },
+          {
+               title: "Номинальный ток А",
+               value: currentModel.params?.centrifugal_chillers?.nominal_voltage_a,
+          },
+          {
+               title: "Пусковой ток, А",
+               value: currentModel.params?.centrifugal_chillers?.inrush_current_a,
+          },
+          {
+               title: "Максимальный рабочий ток А",
+               value: currentModel.params?.centrifugal_chillers?.max_voltage_a,
+          },
+          {
+               title: "Максимальный потребляемый ток, А",
+               value: currentModel.params?.centrifugal_chillers?.max_cons_voltage_a,
+          },
+          {
+               title: "Гидравлические параметры испарителя: тип",
+               value: currentModel.params?.centrifugal_chillers?.hpe_type,
+          },
+          {
+               title: "Гидравлические параметры испарителя: диаметр труб, мм",
+               value: currentModel.params?.centrifugal_chillers?.hpe_pipe_diameter_mm,
+          },
+          {
+               title: "Охлаждение: Гидравлические параметры испарителя: сопротивление, кПа",
+               value: currentModel.params?.centrifugal_chillers?.cooling_hpe_res,
+          },
+          {
+               title: "Охлаждение: Гидравлические параметры испарителя: расход воды, м³/ч",
+               value: currentModel.params?.centrifugal_chillers?.cooling_hpe_water_cons,
+          },
+          {
+               title: "Нагрев: Гидравлические параметры испарителя: сопротивление, кПа",
+               value: currentModel.params?.centrifugal_chillers?.heating_hpe_res,
+          },
+          {
+               title: "Нагрев: Гидравлические параметры испарителя: расход воды, м³/ч",
+               value: currentModel.params?.centrifugal_chillers?.heating_hpe_water_cons,
+          },
+          {
+               title: "Гидравлические параметры (конденсатор, кожухотрубный): диаметр труб, мм",
+               value: currentModel.params?.centrifugal_chillers?.hp_htc_pipe_diam,
+          },
+          {
+               title: "Охлаждение: Гидравлические параметры конденсатора: сопротивление, кПа",
+               value: currentModel.params?.centrifugal_chillers?.cooling_hpc_res,
+          },
+          {
+               title: "Охлаждение: Гидравлические параметры конденсатора: расход воды, м³/ч",
+               value: currentModel.params?.centrifugal_chillers?.cooling_hpc_water_cons,
+          },
+          {
+               title: "Нагрев: Гидравлические параметры конденсатора: сопротивление, кПа",
+               value: currentModel.params?.centrifugal_chillers?.heating_hpc_res,
+          },
+          {
+               title: "Нагрев: Гидравлические параметры конденсатора: расход воды, м³/ч",
+               value: currentModel.params?.centrifugal_chillers?.heating_hpc_water_cons,
+          },
+          {
+               title: "Тип компрессора",
+               value: currentModel.params?.centrifugal_chillers?.compressor_type,
+          },
+          {
+               title: "Уровень шума, дБ(A)",
+               value: currentModel.params?.centrifugal_chillers?.noise,
+          },
+          {
+               title: "Тип хладагента",
+               value: currentModel.params?.centrifugal_chillers?.freon_type,
+          },
+          {
+               title: "Заводская заправка хладагента, кг",
+               value: currentModel.params?.centrifugal_chillers?.freon_value,
+          },
+          {
+               title: "Размер (Ш×В×Г), мм",
+               value: currentModel.params?.centrifugal_chillers?.size,
+          },
+          {
+               title: "Вес (нетто/брутто), кг",
+               value: currentModel.params?.centrifugal_chillers?.weight,
+          },
+          {
+               title: "Операционный вес, кг",
+               value: currentModel.params?.centrifugal_chillers?.operating_weight,
+          },
+          {
+               title: "Вес нетто RHWE-HA, кг",
+               value: currentModel.params?.centrifugal_chillers?.weight_rhwe_ha,
+          },
+          {
+               title: "Вес нетто RHWE-HAB, кг",
+               value: currentModel.params?.centrifugal_chillers?.weight_rhwe_hab,
+          },
+          {
+               title: "Операционный вес, RHWE-HA, кг",
+               value: currentModel.params?.centrifugal_chillers?.oper_weight_rhwe_ha,
+          },
+          {
+               title: "Операционный вес, RHWE-HAB, кг",
+               value: currentModel.params?.centrifugal_chillers?.oper_weight_rhwe_hab,
+          },
      ];
-     return currentModel.variation && (
-          <ul className="grid grid-cols-1 justify-between mt-5 gap-5 md:gap-10 xs:grid-cols-2 md:mt-10 md:grid-cols-3 lg:grid-cols-4" id="productParams">
-               {params.map((el, index) => {
-                    if (!el.value) return null;
-                    return (
-                         <li key={index} className="flex flex-col gap-2.5">
-                              <p className="text-[#989898] font-medium">{el.title}</p>
-                              <p>{el.value}</p>
-                         </li>
-                    );
-               })}
-          </ul>
+     return (
+          currentModel.variation && (
+               <ul className="grid grid-cols-1 justify-between mt-5 gap-5 md:gap-10 xs:grid-cols-2 md:mt-10 md:grid-cols-3 lg:grid-cols-4" id="productParams">
+                    {params.map((el, index) => {
+                         if (!el.value) return null;
+                         return (
+                              <li key={index} className="flex flex-col gap-2.5">
+                                   <p className="text-[#989898] font-medium">{el.title}</p>
+                                   <p>{el.value}</p>
+                              </li>
+                         );
+                    })}
+               </ul>
+          )
      );
 };
 
