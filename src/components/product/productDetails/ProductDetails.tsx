@@ -26,7 +26,7 @@ const ProductDetails: React.FC<Props> = ({ locale, product, dollarValue }) => {
                     {product.general_params.length > 0 &&
                          product.general_params.map((el) => {
                               return (
-                                   <div key={el.id} className="flex items-center w-full gap-2 bg-white h-[80px] px-2.5 rounded-xl">
+                                   <div key={el.id} className="flex items-center w-full gap-2 bg-white h-[60px] px-2.5 rounded-xl lg:h-20">
                                         <Image src={strapiUrl + el.icon.url} alt="icon" width={80} height={80} className="h-[90%] w-auto aspect-square object-contain" />
                                         <p className="leading-130% text-[16px] font-medium">{el.title}</p>
                                    </div>

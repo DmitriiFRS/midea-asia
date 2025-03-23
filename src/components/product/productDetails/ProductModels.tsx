@@ -30,7 +30,7 @@ const ProductModels: React.FC<Props> = ({ locale, models }) => {
                               key={el.id}
                               className={`flex justify-between items-center gap-10 h-[60px] px-[10px] rounded-xl ${
                                    currentModel?.id === el.id ? "bg-black text-white" : "bg-white text-black"
-                              } lg:h-[80px]`}
+                              } lg:h-[60px]`}
                          >
                               <p className="leading-130% text-[14px] font-medium lg:text-[16px]">{el.variation}:</p>
                               <p className="leading-130% text-[14px] font-medium lg:text-[16px]">{el.value}</p>
@@ -79,7 +79,7 @@ const ModelsSlider = ({ models }: { models: VariationInterface[] }) => {
                                         key={el.id}
                                         className={`w-full flex justify-between items-center gap-3 xl:gap-10 h-[60px] px-[10px] rounded-xl ${
                                              currentModel?.id === el.id ? "bg-black text-white" : "bg-white text-black"
-                                        } lg:h-[80px]`}
+                                        } lg:h-[60px]`}
                                    >
                                         <p className="leading-130% text-[14px] font-medium lg:text-[16px]">{el.variation}:</p>
                                         <p className="leading-130% text-[14px] font-medium lg:text-[16px] line-clamp-2">{el.value}</p>
