@@ -1,0 +1,3 @@
+User-Agent: *
+Allow: /
+Sitemap: https://climate-academy.uz/sitemap.xml

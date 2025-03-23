@@ -5,6 +5,27 @@ import ProductSlider from "@/components/product/productSlider/ProductSlider";
 import { ProductContextProvider } from "@/context/ProductContext";
 import { getDollarValue } from "@/fetch/getDollarValue";
 import { getOneProduct } from "@/fetch/getOneProduct";
+import { Product } from "@/interfaces/products.interface";
+
+export async function generateMetadata({ params }: Props) {
+     const { locale, slug } = await params;
+     const { data }: { data: Product } = await getOneProduct({ locale, slug });
+     if (!data) return null;
+     return (
+          data && {
+               title: `${data.name} ${data.brand.title}, Купить в Ташкенте, Узбекистане`,
+               description: `Купить или оставить заявку на ${data.name} ${data.brand.title}. Гарантия качества. Доставка по Ташкенту и всему Узбекистану.`,
+               openGraph: {
+                    type: "website",
+                    locale: locale,
+                    url: `https://climate-academy.uz/${locale === "ru" ? "" : locale}/catalog/${data.categories.slug}/${data.slug}`,
+                    siteName: "climate-academy",
+                    title: `${data.name} ${data.brand.title}, Купить в Ташкенте, Узбекистане`,
+                    description: `Купить или оставить заявку на ${data.name} ${data.brand.title}. Гарантия качества. Доставка по Ташкенту и всему Узбекистану.`,
+               },
+          }
+     );
+}
 
 interface Props {
      params: Promise<{

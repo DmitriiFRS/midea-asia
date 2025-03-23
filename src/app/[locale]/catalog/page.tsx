@@ -14,6 +14,23 @@ import boiler from "@/../public/images/catalog/gas-boiler-catalog.webp";
 import recup from "@/../public/images/catalog/recups-catalog.webp";
 import dehumids from "@/../public/images/catalog/dehumids-catalog.webp";
 import NextBreadcrumb from "@/components/common/Breadcrumbs";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+     title: "Climate Academy | Каталог категорий. Промышленные и бытовые кондиционеры, бытовая техника Midea и Welkin",
+     description:
+          "Climate Academy является официальным представителем Midea в Узбекистане. Продажа, установка и обслуживание промышленных, бытовых кондиционеров и другой бытовой техники.",
+     openGraph: {
+          type: "website",
+          locale: "ru",
+          url: "https://climate-academy.uz/catalog",
+          siteName: "climate-academy",
+          title: "Climate Academy | Каталог категорий. Промышленные и бытовые кондиционеры, бытовая техника Midea и Welkin",
+          description:
+               "Climate Academy является официальным представителем Midea в Узбекистане. Продажа, установка и обслуживание промышленных, бытовых кондиционеров и другой бытовой техники.",
+     },
+};
+
 interface Props {
      params: Promise<{
           locale: string;

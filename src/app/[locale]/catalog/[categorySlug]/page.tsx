@@ -5,6 +5,27 @@ import ProductList from "@/components/common/productList/ProductList";
 import { ProductCatalogContextProvider } from "@/context/ProductCatalogContext";
 import { getCategories } from "@/fetch/getCategories";
 import { getDollarValue } from "@/fetch/getDollarValue";
+import { Category } from "@/interfaces/categories.interface";
+
+export async function generateMetadata({ params }: Props) {
+     const { locale, categorySlug } = await params;
+     const { data }: { data: Category } = await getCategories({ locale, categoryValue: categorySlug });
+     if (!data) return null;
+     return (
+          data && {
+               title: `${data.title} Midea и Welkin, Купить в Ташкенте, Узбекистане`,
+               description: `${data.title} | Каталог продукции Midea и Welkin. Купить в Ташкенте, Узбекистане. Гарантия качества. Доставка по Ташкенту и всему Узбекистану.`,
+               openGraph: {
+                    type: "website",
+                    locale: locale,
+                    url: `https://climate-academy.uz/${locale === "ru" ? "" : locale}/catalog/${data.slug}`,
+                    siteName: "climate-academy",
+                    title: `${data.title} Midea и Welkin, Купить в Ташкенте, Узбекистане`,
+                    description: `${data.title} | Каталог продукции Midea и Welkin. Купить в Ташкенте, Узбекистане. Гарантия качества. Доставка по Ташкенту и всему Узбекистану.`,
+               },
+          }
+     );
+}
 
 interface Props {
      params: Promise<{

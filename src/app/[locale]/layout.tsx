@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import Header from "@/components/header/Header";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
@@ -11,8 +10,18 @@ import { NextIntlClientProvider } from "next-intl";
 import NextTopLoader from "nextjs-toploader";
 
 export const metadata: Metadata = {
-     title: "Climate Academy",
-     description: "Midea кондиционеры",
+     title: "Climate Academy | Промышленные и бытовые кондиционеры Midea и Welkin",
+     description:
+          "Climate Academy является официальным представителем Midea в Узбекистане. Продажа, установка и обслуживание промышленных, бытовых кондиционеров и другой бытовой техники.",
+     openGraph: {
+          type: "website",
+          locale: "ru",
+          url: "https://climate-academy.uz",
+          siteName: "climate-academy",
+          title: "Climate Academy | Промышленные и бытовые кондиционеры Midea & Welkin",
+          description:
+               "Climate Academy является официальным представителем Midea в Узбекистане. Продажа, установка и обслуживание промышленных, бытовых кондиционеров и другой бытовой техники.",
+     },
 };
 
 interface RootLayoutProps {
