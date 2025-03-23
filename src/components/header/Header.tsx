@@ -45,14 +45,14 @@ const Header: React.FC<Props> = ({ locale, nav }) => {
           <>
                <div className="bg-black w-full min-h-8 text-white hidden md:block">
                     <Container className="flex justify-between items-center h-full text-[16px] font-semibold">
-                         <a target="_blank" className="flex gap-2" href="tel:+998712000667 ">
+                         <a target="_blank" className="flex items-center gap-2 duration-300 hover:opacity-50" href="tel:+998712000667">
                               <Image src={pin} alt="" width={20} height={20} className="" />
                               <p>+99871 200 06 67</p>
                          </a>
                          <a
                               target="_blank"
                               href="https://yandex.uz/maps/10335/tashkent/?ll=69.250114%2C41.266898&mode=poi&poi%5Bpoint%5D=69.250063%2C41.266885&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D175879305133&z=21"
-                              className="flex gap-2"
+                              className="flex gap-2 items-center duration-300 hover:opacity-50"
                          >
                               <Image src={phone} alt="" width={20} height={20} className="" />
                               <p>г. Ташкент, Малая кольцевая дорога, 10</p>
@@ -70,11 +70,11 @@ const Header: React.FC<Props> = ({ locale, nav }) => {
                                    {leftNav.map((el) => (
                                         <li key={el.id} className="relative z-10">
                                              {el.isExternal ? (
-                                                  <a target="_blank" href={el.href}>
+                                                  <a target="_blank" href={el.href} className="duration-300 hover:opacity-50">
                                                        <span className="text-[16px]">{el.title}</span>
                                                   </a>
                                              ) : (
-                                                  <Link href={`/${locale}${el.href}`}>
+                                                  <Link href={`/${locale}${el.href}`} className="duration-300 hover:opacity-50">
                                                        <span className="text-[16px]">{el.title}</span>
                                                   </Link>
                                              )}
@@ -90,11 +90,11 @@ const Header: React.FC<Props> = ({ locale, nav }) => {
                                    {rightNav.map((el) => (
                                         <li key={el.id} className="relative z-10">
                                              {el.isExternal ? (
-                                                  <a target="_blank" href={el.href}>
+                                                  <a target="_blank" href={el.href} className="duration-300 hover:opacity-50">
                                                        <span className="text-[16px]">{el.title}</span>
                                                   </a>
                                              ) : (
-                                                  <Link href={`/${locale}${el.href}`}>
+                                                  <Link href={`/${locale}${el.href}`} className="duration-300 hover:opacity-50">
                                                        <span className="text-[16px]">{el.title}</span>
                                                   </Link>
                                              )}

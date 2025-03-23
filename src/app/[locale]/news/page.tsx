@@ -1,3 +1,4 @@
+import NextBreadcrumb from "@/components/common/Breadcrumbs";
 import Container from "@/components/common/container/Container";
 import NewsList from "@/components/news/NewsList";
 import { strapiGet } from "@/fetch/strapiGet";
@@ -10,7 +11,8 @@ const page = async () => {
                <main className="flex-[1_1_auto]">
                     <section className="section-margin">
                          <Container>
-                              <h1 className="text-[40px] font-medium">Новости и статьи</h1>
+                              <NextBreadcrumb homeElement="Главная" separator="/" />
+                              <h1 className="mt-5 text-[40px] font-medium">Новости и статьи</h1>
                               <NewsList news={newsData.data} />
                          </Container>
                     </section>

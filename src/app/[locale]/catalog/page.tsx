@@ -13,7 +13,7 @@ import curtain from "@/../public/images/catalog/heat-curtains-catalog.webp";
 import boiler from "@/../public/images/catalog/gas-boiler-catalog.webp";
 import recup from "@/../public/images/catalog/recups-catalog.webp";
 import dehumids from "@/../public/images/catalog/dehumids-catalog.webp";
-
+import NextBreadcrumb from "@/components/common/Breadcrumbs";
 interface Props {
      params: Promise<{
           locale: string;
@@ -117,12 +117,12 @@ const page: React.FC<Props> = async ({ params }) => {
                          href: "/catalog/chillers",
                          image: chiller,
                     },
-                    {
+                    /*{
                          id: 2,
                          title: "Фанкойлы",
                          href: "/catalog/fancoils",
                          image: fancoils,
-                    },
+                    },*/
                ],
           },
      ];
@@ -130,7 +130,8 @@ const page: React.FC<Props> = async ({ params }) => {
           <main className="flex-[1_1_auto]">
                <section className="section-margin">
                     <Container>
-                         <h1 className="text-[40px] font-medium">Каталог</h1>
+                         <NextBreadcrumb homeElement="Главная" separator="/" />
+                         <h1 className="text-[40px] font-medium mt-5">Каталог</h1>
                          <CatalogList items={items} locale={locale} />
                     </Container>
                </section>

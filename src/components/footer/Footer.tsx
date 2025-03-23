@@ -1,8 +1,4 @@
-import Link from "next/link";
 import Container from "../common/container/Container";
-import Image from "next/image";
-import logo from "@icons/common/ca-logo.webp";
-import { FaTelegram } from "react-icons/fa";
 import FooterNav from "./FooterNav";
 import FooterContacts from "./FooterContacts";
 import FooterLogo from "./FooterLogo";
@@ -13,12 +9,11 @@ interface Props {
           id: number;
           title: string;
           href: string;
+          isExternal?: boolean;
      }[];
 }
 
 const Footer: React.FC<Props> = ({ locale, nav }) => {
-     const leftNav = nav.slice(0, 1);
-     const rightNav = nav.slice(1, 2);
      return (
           <footer className="text-white bg-black py-[60px]">
                <Container className="">

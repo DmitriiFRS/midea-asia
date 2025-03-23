@@ -20,7 +20,7 @@ const NewsList = ({ news }: Props) => {
                                              alt={el.title}
                                              width={300}
                                              height={300}
-                                             className="w-full h-auto aspect-square object-cover group-hover:scale-105"
+                                             className="w-full h-auto aspect-square object-cover duration-300 group-hover:scale-105"
                                         />
                                    </div>
                                    <div className="flex-[1_1_auto]">

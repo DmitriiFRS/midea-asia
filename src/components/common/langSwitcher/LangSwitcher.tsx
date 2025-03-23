@@ -17,10 +17,9 @@ interface Props {
 const LangSwitcher: React.FC<Props> = ({ locale, inModal, inBurger }) => {
      const router = useRouter();
      const [isOpen, setIsOpen] = useState(false);
-     const localesArray = ["ru", "uz"];
+     const localesArray = ["ru"];
      const locales = {
           ru: "RU",
-          uz: "UZ",
      };
      const currentLocale = locales[locale as keyof typeof locales];
      function toggleDropdown(currentLng?: string) {

@@ -6,6 +6,7 @@ interface Props {
           id: number;
           title: string;
           href: string;
+          isExternal?: boolean;
      }[];
 }
 
@@ -15,9 +16,15 @@ const FooterNav: React.FC<Props> = ({ locale, nav }) => {
                <ul className="flex flex-col gap-4 md:gap-8">
                     {nav.map((el) => (
                          <li key={el.id} className="text-center md:text-start">
-                              <Link href={`/${locale}${el.href}`}>
-                                   <span className="text-[16px]">{el.title}</span>
-                              </Link>
+                              {el.isExternal ? (
+                                   <a target="_blank" href={el.href} className="duration-300 hover:opacity-50">
+                                        <span className="text-[16px]">{el.title}</span>
+                                   </a>
+                              ) : (
+                                   <Link href={`/${locale}${el.href}`} className="duration-300 hover:opacity-50">
+                                        <span className="text-[16px]">{el.title}</span>
+                                   </Link>
+                              )}
                          </li>
                     ))}
                </ul>

@@ -13,8 +13,8 @@ const FooterContacts: React.FC<Props> = ({ locale }) => {
                          <a target="_blank" href="tel:+998712000667" className="underline underline-offset-4 hover:no-underline">
                               +998 71 200 06 67
                          </a>
-                         <a target="_blank" href="tel:+998779500636" className="underline underline-offset-4 hover:no-underline">
-                              +998 77 950 06 36
+                         <a target="_blank" href="tel:+998959500636" className="underline underline-offset-4 hover:no-underline">
+                              +998 95 950 06 36
                          </a>
                     </div>
                </div>
