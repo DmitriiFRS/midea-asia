@@ -29,6 +29,9 @@ export async function getProductsSitemap({ locale }: Props) {
                          categories: true,
                     },
                     locale: locale,
+                    pagination: {
+                         pageSize: 100,
+                    },
                },
           });
           return response.data;

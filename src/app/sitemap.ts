@@ -2,68 +2,65 @@ import { getCategories } from "@/fetch/getCategories";
 import { getProductsSitemap } from "@/fetch/getProductsSitemap";
 import { Category } from "@/interfaces/categories.interface";
 import { Product } from "@/interfaces/products.interface";
+import type { MetadataRoute } from "next";
 
-export default async function sitemap() {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
      const categories = await getCategories({ locale: "ru" });
      const products = await getProductsSitemap({ locale: "ru" });
-     try {
-          return [
-               ...categories.data.map((el: Category) => {
-                    return {
-                         url: `https://climate-academy.uz/catalog/${el.slug}`,
-                         lastModified: new Date(),
-                         alternates: {
-                              languages: {
-                                   ru: `https://climate-academy.uz/catalog/${el.slug}`,
-                                   uz: `https://climate-academy.uz/uz/catalog/${el.slug}`,
-                              },
-                         },
-                    };
-               }),
-               ...products.data.map((el: Product) => {
-                    return {
-                         url: `https://climate-academy.uz/catalog/${el.categories.slug}/${el.slug}`,
-                         lastModified: new Date(),
-                         alternates: {
-                              languages: {
-                                   ru: `https://climate-academy.uz/catalog/${el.categories.slug}/${el.slug}`,
-                                   uz: `https://climate-academy.uz/uz/catalog/${el.categories.slug}/${el.slug}`,
-                              },
-                         },
-                    };
-               }),
-               {
-                    url: "https://climate-academy.uz",
+     return [
+          ...categories.data.map((el: Category) => {
+               return {
+                    url: `https://climate-academy.uz/catalog/${el.slug}`,
                     lastModified: new Date(),
                     alternates: {
                          languages: {
-                              ru: "https://climate-academy.uz",
-                              uz: "https://climate-academy.uz/uz",
+                              ru: `https://climate-academy.uz/catalog/${el.slug}`,
+                              uz: `https://climate-academy.uz/uz/catalog/${el.slug}`,
                          },
                     },
-               },
-               {
-                    url: "https://climate-academy.uz/catalog",
+               };
+          }),
+          ...products.data.map((el: Product) => {
+               return {
+                    url: `https://climate-academy.uz/catalog/${el.categories.slug}/${el.slug}`,
                     lastModified: new Date(),
                     alternates: {
                          languages: {
-                              ru: "https://climate-academy.uz/catalog",
-                              uz: "https://climate-academy.uz/uz/catalog",
+                              ru: `https://climate-academy.uz/catalog/${el.categories.slug}/${el.slug}`,
+                              uz: `https://climate-academy.uz/uz/catalog/${el.categories.slug}/${el.slug}`,
                          },
                     },
-               },
-               {
-                    url: "https://climate-academy.uz/news",
-                    lastModified: new Date(),
-                    alternates: {
-                         languages: {
-                              ru: "https://climate-academy.uz/news",
-                              uz: "https://climate-academy.uz/uz/news",
-                         },
+               };
+          }),
+          {
+               url: "https://climate-academy.uz",
+               lastModified: new Date(),
+               alternates: {
+                    languages: {
+                         ru: "https://climate-academy.uz",
+                         uz: "https://climate-academy.uz/uz",
                     },
                },
-          ];
-     } catch (error) {
-          console.log("sitemap error: ", error);
-     }
+          },
+          {
+               url: "https://climate-academy.uz/catalog",
+               lastModified: new Date(),
+               alternates: {
+                    languages: {
+                         ru: "https://climate-academy.uz/catalog",
+                         uz: "https://climate-academy.uz/uz/catalog",
+                    },
+               },
+          },
+          {
+               url: "https://climate-academy.uz/news",
+               lastModified: new Date(),
+               alternates: {
+                    languages: {
+                         ru: "https://climate-academy.uz/news",
+                         uz: "https://climate-academy.uz/uz/news",
+                    },
+               },
+          },
+     ];
 }
