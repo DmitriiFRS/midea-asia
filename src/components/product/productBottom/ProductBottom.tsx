@@ -30,13 +30,6 @@ const ProductBottom: React.FC<Props> = ({ locale, productDescription, productPar
 
                <div className="space-y-5 mt-[60px]" id="productDescription">
                     <h2 className="text-[24px] font-semibold leading-120% md:text-[35px]">Подробное описание</h2>
-                    {productVideo && (
-                         <div className="w-full h-auto aspect-[16/7] border hidden">
-                              <video autoPlay className="w-full h-full border object-cover">
-                                   <source src={strapiUrl + productVideo.url} className="w-full h-full object-cover" />
-                              </video>
-                         </div>
-                    )}
                     {productImages && (
                          <div className="flex flex-col gap-20">
                               {productImages.map((el, index) => {
@@ -66,3 +59,13 @@ const ProductBottom: React.FC<Props> = ({ locale, productDescription, productPar
 };
 
 export default ProductBottom;
+
+/* 
+{productVideo && (
+                         <div className="w-full h-auto aspect-[16/7] border hidden">
+                              <video autoPlay className="w-full h-full border object-cover">
+                                   <source src={strapiUrl + productVideo.url} className="w-full h-full object-cover" />
+                              </video>
+                         </div>
+                    )}
+*/
