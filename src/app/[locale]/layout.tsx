@@ -22,8 +22,10 @@ export const metadata: Metadata = {
           description:
                "Climate Academy является официальным представителем Midea в Узбекистане. Продажа, установка и обслуживание промышленных, бытовых кондиционеров и другой бытовой техники.",
      },
+     verification: {
+          google: "8CUKHvpk7LZPGIXMc7BH7ZBRd25JIBdgD5laP3yRHZg",
+     },
 };
-
 interface RootLayoutProps {
      children: React.ReactNode;
      params: Promise<{
