@@ -13,7 +13,7 @@ export interface Product {
           url: string;
      }[];
      brand: BrandInterface;
-     categories: CategoryInterface[];
+     categories: CategoryInterface;
      variation: VariationInterface[];
      general_params: {
           id: number;

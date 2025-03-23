@@ -2,6 +2,9 @@ import Container from "../common/container/Container";
 import FooterNav from "./FooterNav";
 import FooterContacts from "./FooterContacts";
 import FooterLogo from "./FooterLogo";
+import { getProducts } from "@/fetch/getProducts";
+import { getProductsSitemap } from "@/fetch/getProductsSitemap";
+import { getCategories } from "@/fetch/getCategories";
 
 interface Props {
      locale: string;

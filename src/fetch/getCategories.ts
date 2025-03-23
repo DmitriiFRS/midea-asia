@@ -21,7 +21,7 @@ export async function getCategories({ locale, categoryValue }: Props) {
           };
      }
      try {
-          const response = await fetch(`${strapiApiUrl}/categories/${categoryValue}?locale=${locale}`);
+          const response = await fetch(`${strapiApiUrl}/categories/${categoryValue ? categoryValue : ""}?locale=${locale}`);
           return response.json();
      } catch (err) {
           return { error: true, msg: err };

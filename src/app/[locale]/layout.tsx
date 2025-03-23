@@ -12,7 +12,7 @@ import NextTopLoader from "nextjs-toploader";
 
 export const metadata: Metadata = {
      title: "Climate Academy",
-     description: "Description",
+     description: "Midea кондиционеры",
 };
 
 interface RootLayoutProps {
