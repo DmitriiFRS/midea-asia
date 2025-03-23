@@ -27,7 +27,7 @@ const ProductVideo = ({ productVideo }: Props) => {
      return (
           <div className="w-full h-auto aspect-[16/9] relative">
                {!isPlaying && (
-                    <button className="absolute left-1/2 top-1/2 w-14 h-14 bg-black p-3 z-10 rounded-lg pointer-events-none">
+                    <button className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 bg-black p-3 z-10 rounded-lg pointer-events-none">
                          <FaPlay className="h-full w-full text-white" />
                     </button>
                )}
