@@ -5,6 +5,7 @@ import ReactMarkdown from "react-markdown";
 import ProductModelParams from "./ProductModelParams";
 import { strapiUrl } from "@/utils/consts";
 import Image from "next/image";
+import ProductVideo from "./ProductVideo";
 
 interface Props {
      locale: string;
@@ -30,6 +31,7 @@ const ProductBottom: React.FC<Props> = ({ locale, productDescription, productPar
 
                <div className="space-y-5 mt-[60px]" id="productDescription">
                     <h2 className="text-[24px] font-semibold leading-120% md:text-[35px]">Подробное описание</h2>
+                    {productVideo && <ProductVideo productVideo={productVideo} />}
                     {productImages && (
                          <div className="flex flex-col gap-20">
                               {productImages.map((el, index) => {
