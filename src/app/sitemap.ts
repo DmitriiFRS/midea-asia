@@ -3,6 +3,7 @@ import { getProductsSitemap } from "@/fetch/getProductsSitemap";
 import { Category } from "@/interfaces/categories.interface";
 import { Product } from "@/interfaces/products.interface";
 import type { MetadataRoute } from "next";
+export const dynamic = "force-dynamic";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
      const categories = await getCategories({ locale: "ru" });
