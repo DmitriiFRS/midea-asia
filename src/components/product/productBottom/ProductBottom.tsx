@@ -52,7 +52,7 @@ const ProductBottom: React.FC<Props> = ({ locale, productDescription, productPar
                               })}
                          </div>
                     )}
-                    <div className="product-description text-[14px] leading-130% flex flex-col items-center gap-5 md:text-[18px] mt-10">
+                    <div className="product-description text-[14px] leading-130% flex flex-col items-center product-markdown gap-5 md:text-[18px] mt-10">
                          <ReactMarkdown>{productDescription}</ReactMarkdown>
                     </div>
                </div>
