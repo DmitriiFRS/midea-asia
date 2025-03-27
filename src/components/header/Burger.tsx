@@ -5,6 +5,7 @@ import logoBlack from "@icons/common/ca-logo.webp";
 import close from "@icons/common/close.svg";
 import LangSwitcher from "../common/langSwitcher/LangSwitcher";
 import Link from "next/link";
+import { useLenis } from "lenis/react";
 
 interface Props {
      locale: string;
@@ -17,19 +18,20 @@ interface Props {
 }
 
 const Burger: React.FC<Props> = ({ locale, nav }) => {
+     const lenis = useLenis();
      const [isOpen, setIsOpen] = useState(false);
      useEffect(() => {
           const scrollbarWidth = window.innerWidth - document.body.clientWidth;
           if (isOpen) {
-               document.body.style.overflow = "hidden";
+               lenis?.stop();
                document.body.style.paddingRight = `${scrollbarWidth}px`;
           } else {
-               document.body.style.overflow = "";
+               lenis?.start();
                document.body.style.paddingRight = "";
           }
 
           return () => {
-               document.body.style.overflow = "";
+               lenis?.start();
                document.body.style.paddingRight = "";
           };
      }, [isOpen]);

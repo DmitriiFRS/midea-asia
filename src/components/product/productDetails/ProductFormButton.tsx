@@ -6,17 +6,19 @@ import { useEffect, useState } from "react";
 import close from "@icons/common/close.svg";
 import Image from "next/image";
 import Form from "@/components/common/form/Form";
+import { useLenis } from "lenis/react";
 
 const ProductFormButtom = () => {
+     const lenis = useLenis();
      const [isOpen, setIsOpen] = useState(false);
      const [success, setSuccess] = useState(false);
      useEffect(() => {
           const scrollWidth = window.innerWidth - document.body.clientWidth;
           if (isOpen) {
-               document.body.style.overflow = "hidden";
+               lenis?.stop();
                document.body.style.paddingRight = `${scrollWidth}px`;
           } else {
-               document.body.style.overflow = "auto";
+               lenis?.start();
                document.body.style.paddingRight = `0px`;
           }
      }, [isOpen]);

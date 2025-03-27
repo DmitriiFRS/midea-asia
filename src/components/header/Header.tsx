@@ -44,7 +44,7 @@ const Header: React.FC<Props> = ({ locale, nav }) => {
      return (
           <>
                <div className="bg-black w-full min-h-8 text-white hidden md:block">
-                    <Container className="flex justify-between items-center h-full text-[16px] font-semibold">
+                    <Container className="flex justify-between items-center h-8 text-[16px] font-semibold">
                          <a target="_blank" className="flex items-center gap-2 duration-300 hover:opacity-50" href="tel:+998712000667">
                               <Image src={pin} alt="" width={20} height={20} className="" />
                               <p>+99871 200 06 67</p>

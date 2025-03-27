@@ -8,6 +8,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { NextIntlClientProvider } from "next-intl";
 import NextTopLoader from "nextjs-toploader";
+import { ReactLenis } from "@/components/common/lenis";
 
 export const metadata: Metadata = {
      title: "Climate Academy | Промышленные и бытовые кондиционеры Midea и Welkin",
@@ -64,6 +65,7 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
      ];
      return (
           <html lang={locale}>
+               <ReactLenis root>
                <body className="">
                     <NextTopLoader color="#ffffff" initialPosition={0.08} crawlSpeed={200} height={2} showSpinner={false} shadow="0 0 10px #fff,0 0 5px #fff" />
                     <div className="wrapper">
@@ -76,6 +78,8 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
                          </NuqsAdapter>
                     </div>
                </body>
+               </ReactLenis>
+               
           </html>
      );
 }

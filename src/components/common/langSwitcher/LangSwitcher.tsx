@@ -7,6 +7,7 @@ import Image, { StaticImageData } from "next/image";
 import ru from "@icons/common/russia.svg";
 import uz from "@icons/common/uzb.webp";
 import arrow from "@icons/common/arrow-tobottom.svg";
+import { useLenis } from "lenis/react";
 
 interface Props {
      locale: string;
@@ -15,6 +16,7 @@ interface Props {
 }
 
 const LangSwitcher: React.FC<Props> = ({ locale, inModal, inBurger }) => {
+     const lenis = useLenis()
      const router = useRouter();
      const [isOpen, setIsOpen] = useState(false);
      const localesArray = ["ru"];
@@ -27,16 +29,17 @@ const LangSwitcher: React.FC<Props> = ({ locale, inModal, inBurger }) => {
           const scrollWidth = window.innerWidth - document.body.clientWidth;
           if (isOpen) {
                if (!inModal && !inBurger) {
-                    document.body.style.overflow = "auto";
+                    lenis?.start()
                     document.body.style.paddingRight = `0px`;
                }
                setIsOpen(false);
           } else {
                if (inModal && !inBurger) {
-                    document.body.style.overflow = "hidden";
+                    lenis?.stop()
                     document.body.style.paddingRight = `${scrollWidth}px`;
                }
-
+               document.body.style.paddingRight = `${scrollWidth}px`;
+               lenis?.stop()
                setIsOpen(true);
           }
      }
