@@ -9,8 +9,6 @@ interface Props {
 }
 
 const NewsPageContent = ({ news }: Props) => {
-  console.log(news.images);
-  console.log(news.images);
   return (
     <section className="mt-14 grid grid-cols-1 items-center md:gap-10 xl:gap-28 lg:grid-cols-2">
       <div className="order-2 lg:order-1">
@@ -31,7 +29,6 @@ const NewsPageContent = ({ news }: Props) => {
             className=" mt-10 lg:mt-0 rounded-xl w-full h-full object-contain"
           />
         )}
-        {news.images && news.images.length > 0 && <NewsPageSlider images={news.images} />}
       </div>
     </section>
   );

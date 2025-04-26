@@ -3,12 +3,8 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
-type Props = {
-  images: string[]; // Assuming images is an array of image URLs
-};
-
-const NewsPageSlider: React.FC<Props> = ({ images }) => {
-  return <Swiper></Swiper>;
+const NewsPageSlider: React.FC = () => {
+  return <div></div>;
 };
 
 export default NewsPageSlider;
