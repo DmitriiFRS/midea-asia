@@ -10,6 +10,7 @@ import { Swiper, SwiperClass, SwiperRef, SwiperSlide } from "swiper/react";
 import { strapiUrl } from "@/utils/consts";
 import CommonButton2 from "@/components/common/commonButton/CommonButton2";
 import ReactMarkdown from "react-markdown";
+import { truncate } from "@/helpers/truncateText";
 
 interface Props {
   locale: string;
@@ -65,22 +66,25 @@ const GuaranteeMain: React.FC<Props> = ({ locale, news }) => {
           onSlideChange={handleSlideChange}
           className="w-full h-full pointer-events-none"
         >
-          {news.map((el) => (
-            <SwiperSlide key={el.id}>
-              <div className="flex flex-col justify-between h-full">
-                <h2 className="text-[24px] text-[#3b3b3b] font-semibold leading-120% lg:text-[36px]">{el.title}</h2>
-                <div className="mt-10 flex flex-col gap-5 text-[16px] leading-120% flex-[1_1_auto] xl:mt-14 xl:text-[20px]">
-                  <ReactMarkdown>{el.preview_description}</ReactMarkdown>
+          {news.map((el) => {
+            const truncatedDescription = truncate(el.description, 400); // Truncate the description to 200 characters
+            return (
+              <SwiperSlide key={el.id}>
+                <div className="flex flex-col justify-center h-full">
+                  <h2 className="text-[24px] text-[#3b3b3b] font-semibold leading-120% lg:text-[36px]">{el.title}</h2>
+                  <div className="mt-10 flex flex-col gap-5 text-[16px] leading-120% xl:mt-14 xl:text-[20px]">
+                    <ReactMarkdown>{truncatedDescription}</ReactMarkdown>
+                  </div>
+                  <CommonButton2
+                    href={"/news/" + el.slug}
+                    className="mt-10 text-[16px] pointer-events-auto max-w-[250px] max-h-[50px] flex items-center justify-center lg:max-w-[300px] lg:text-[20px]"
+                  >
+                    Подробнее
+                  </CommonButton2>
                 </div>
-                <CommonButton2
-                  href={"/news/" + el.slug}
-                  className="mt-5 text-[16px] pointer-events-auto max-w-[250px] max-h-[50px] flex items-center justify-center lg:max-w-[300px] lg:text-[20px]"
-                >
-                  Подробнее
-                </CommonButton2>
-              </div>
-            </SwiperSlide>
-          ))}
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
       </div>
     </div>
