@@ -1,12 +1,15 @@
 import CommonButton from "@/components/common/commonButton/CommonButton";
 import Container from "@/components/common/container/Container";
 import HeroSwiper from "./HeroSwiper";
+import { strapiGet } from "@/fetch/strapiGet";
+import { strapiApiUrl } from "@/utils/consts";
 
 interface Props {
   locale: string;
 }
 
-const Hero: React.FC<Props> = ({ locale }) => {
+const Hero: React.FC<Props> = async ({ locale }) => {
+  const { data } = await strapiGet(`${strapiApiUrl}/homepage?populate=main_banners`);
   return (
     <section className="w-full h-screen relative overflow-hidden text-white">
       <div className="w-full h-screen absolute left-0 top-0 bg-black opacity-25 -z-10"></div>
@@ -23,7 +26,7 @@ const Hero: React.FC<Props> = ({ locale }) => {
           Каталог
         </CommonButton>
       </Container>
-      <HeroSwiper locale={locale} />
+      <HeroSwiper locale={locale} bannersData={data} />
     </section>
   );
 };
