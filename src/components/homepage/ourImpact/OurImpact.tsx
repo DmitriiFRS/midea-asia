@@ -23,7 +23,7 @@ const OurImpact: React.FC = () => {
 						);
 					})}
 			</Marquee>
-			<Image src={map} alt="map" width={500} height={500} className="mt-20 w-ful h-auto aspect-[5156/2474]" />
+			<Image src={map} alt="map" width={4000} height={4000} quality={100} className="mt-20 w-full h-auto aspect-[5156/2474]" />
 		</section>
 	);
 };
