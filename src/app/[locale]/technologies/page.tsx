@@ -16,14 +16,14 @@ const page: React.FC = () => {
 	];
 	return (
 		<main className="flex-[1_1_auto]">
-                    <section className="section-margin">
-                         <Container>
-                              <NextBreadcrumb homeElement="Главная" separator="/" />
-                              <h1 className="mt-5 text-[40px] font-medium">Новости и статьи</h1>
-                              <NewsList list={data} />
-                         </Container>
-                    </section>
-               </main>
+			<section className="section-margin">
+				<Container>
+					<NextBreadcrumb homeElement="Главная" separator="/" />
+					<h1 className="mt-5 text-[40px] font-medium">Новости и статьи</h1>
+					<NewsList news={data} />
+				</Container>
+			</section>
+		</main>
 	);
 };
 
